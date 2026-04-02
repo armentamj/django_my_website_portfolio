@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-xl mx-auto mt-10">
+    <h1 class="text-2xl font-bold mb-6 font-michroma">Edit Profile</h1>
+
+    <form method="post" enctype="multipart/form-data" class="space-y-6">
+        {% csrf_token %}
+
+        {% for field in form %}
+        <div class="flex flex-col [&_li]:mt-2 [&_li]:text-green-600 [&_li]:list-none [&_li]:text-xs">
+            <label class="font-michroma text-sm mb-1">{{ field.label }}</label>
+
+            <div class="border rounded-md p-2">
+                {{ field }}
+            </div>
+
+            {% if field.help_text %}
+            <p class="mt-1 text-xs text-green-600 font-sans">
+                {{ field.help_text|safe }}
+            </p>
+            {% endif %}
+
+            {% if field.errors %}
+            <p class="text-xs text-red-600 mt-1">{{ field.errors.0 }}</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+
+        <div class="pt-4">
+            <button type="submit"
+                class="cursor-pointer border-box w-full hover:bg-black/30 hover:text-black text-white bg-black duration-300 ease-in px-4 py-2 rounded-md font-michroma">
+                Save Changes
+            </button>
+        </div>
+    </form>
+
+    <p class="mt-4 text-center">
+        <a href="{% url 'profile' %}" class="text-sm underline font-michroma">Cancel</a>
+    </p>
+</div>
+{% endblock %}

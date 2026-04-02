@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-xl mx-auto mt-10">
+    <h1 class="text-2xl font-bold">Home Page</h1>
+    <p class="mt-4">Welcome to the inner circle!</p>
+    
+    
+    {% if user.is_authenticated %}
+        <p>Hello, {{ user.username }}! You are logged in.</p>
+    
+    {% else %}
+        <p>You are not logged in.</p>
+        <a href="{% url 'login' %}">Login here</a>
+    {% endif %}
+</div>
+{% endblock %}

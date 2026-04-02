@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-xl mx-auto mt-10">
+    <h1 class="text-2xl font-bold mb-6 font-michroma">Profile</h1>
+    <div class="flex flex-col items-center space-y-4">
+        <!-- Display the Profile Picture -->
+        {% if user.profile_picture %}
+        <img src="{{ user.profile_picture.url }}" alt="{{ user.name }}"
+            class="w-64 h-64 rounded-full object-cover border-2 border-black">
+        {% else %}
+        <!-- Fallback if no image exists -->
+        <div
+            class="w-64 h-64 rounded-full bg-gray-200 flex items-center justify-center text-2xl font-michroma text-gray-500">
+            {{ user.name|slice:":1"|upper }}
+        </div>
+        {% endif %}
+    
+        <div class="text-center space-y-1">
+            <p class="font-michroma text-lg">{{ user.name }}</p>
+            <p class="text-gray-600 text-sm font-sans">{{ user.email }}</p>
+        </div>
+    </div>
+    <p class="mt-4 text-center">
+        <a href="{% url 'edit_profile' %}" class="text-sm underline font-michroma">Edit Profile</a>
+    </p>
+</div>
+{% endblock %}
