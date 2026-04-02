@@ -67,7 +67,6 @@ def weather(request):
         curr_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&appid={api_key}"
         curr_res = requests.get(curr_url).json()
 
-        print(curr_res, flush=True)
 
         # 3. Forecast
         fore_url = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}&units=metric"
@@ -109,12 +108,13 @@ def weather(request):
         context = {
             'city': display_name,
             'current': {
+                'curr_res': curr_res,
                 'id': curr_res['weather'][0]['id'],
                 'temp': round(curr_res['main']['temp']),
                 'description': curr_res['weather'][0]['description'],
                 'icon': curr_res['weather'][0]['icon'],
                 'humidity': curr_res['main']['humidity'],
-                'wind': curr_res['wind']['speed'],
+                'wind': curr_res['wind'],
             },
             'forecast': forecast_list[:5]
         }
