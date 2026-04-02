@@ -1,0 +1,13 @@
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Outer Green V -->
+  <path d="M90 90 L256 420 L422 90" fill="none" stroke="#41B883" stroke-width="28" stroke-linejoin="miter"></path>
+
+  <!-- Inner Dark V -->
+  <path d="M165 90 L256 260 L347 90" fill="none" stroke="#35495E" stroke-width="28" stroke-linejoin="miter"></path>
+
+  <!-- Text -->
+  <text x="256" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="72" fill="#35495E">
+    &lt;meta&gt;
+  </text>
+</svg>

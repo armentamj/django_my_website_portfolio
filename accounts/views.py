@@ -5,6 +5,7 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm  # Import your N
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 
+
 def signup(request):
     if request.method == 'POST':
         # Add request.FILES so it can process the profile picture upload

@@ -1,7 +1,42 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-<div class="max-w-xl mx-auto mt-10">
-    <h1 class="text-2xl font-bold w-fit mx-auto">Home Page</h1>
+<div class="max-w-4xl mx-auto my-10 px-4">
+    <h1 class="text-2xl font-bold w-fit mx-auto mb-0">Joel M. Armenta</h1>
+    <h2 class="font-semibold w-fit text-md mx-auto mb-8">Full Stack Web Developer</h2>
+
+    <!-- GRID CONTAINER -->
+    <div class="grid gap-6 [grid-template-areas:'text_text_pic''icons_icons_pic'] grid-cols-3 gap-10">
+
+        <!-- TEXT AREA -->
+        <p class="[grid-area:text]">
+            Hello, I'm Joel - a passionate Jr. Full Stack Web Developer with a particular love for the creativity of front-end
+            development. Originally from L.A., CA, I was raised in Miami, FL, and have been calling Germany home since 2017. My
+            coding journey began in early 2023, and I'm proud to have earned my Full Stack Web Developer certification from
+            Le Wagon Berlin. Fast forward to today and I have expanded my stack to include a framework for front-end, Django, and Python.
+        </p>
+
+        <!-- IMAGE AREA -->
+        <div class="[grid-area:pic]">
+            <img class="rounded-xs w-full h-full object-cover -scale-x-100" src="{% static 'joel_garden.jpg' %}" alt="Joel">
+        </div>
+
+        <!-- ICONS AREA -->
+        <div class="[grid-area:icons] grid grid-cols-4 gap-4">
+            <img class="w-12 h-12 object-contain" src="{% static 'python.svg' %}" alt="Python">
+            <img class="w-12 h-12 object-contain" src="{% static 'django.svg' %}" alt="Django">
+            <img class="w-12 h-12 object-contain" src="{% static 'html.svg' %}" alt="HTML">
+            <img class="w-12 h-12 object-contain" src="{% static 'css.svg' %}" alt="CSS">
+            <img class="w-12 h-12 object-contain" src="{% static 'javascript.svg' %}" alt="JS">
+            <img class="w-12 h-12 object-contain" src="{% static 'ruby.svg' %}" alt="Ruby">
+            <img class="w-12 h-12 object-contain" src="{% static 'rails.svg' %}" alt="Rails">
+            <img class="w-12 h-12 object-contain" src="{% static 'sql.svg' %}" alt="SQL">
+            <img class="w-12 h-12 object-contain" src="{% static 'vue.svg' %}" alt="Vue">
+            <img class="w-12 h-12 object-contain" src="{% static 'tailwind.svg' %}" alt="Tailwind">
+            <img class="w-12 h-12 object-contain" src="{% static 'docker.svg' %}" alt="Docker">
+            <img class="w-12 h-12 object-contain" src="{% static 'Figma.svg' %}" alt="Figma">
+        </div>
+    </div>
 </div>
 {% endblock %}
