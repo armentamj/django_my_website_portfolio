@@ -30,6 +30,8 @@ urlpatterns = [
     path('accounts/profile/edit/', edit_profile, name='edit_profile'), # For editing the user profiles
     path('', home, name='home'), #This is the 'root to: "home#index"'
     path('weather/', views.weather, name='weather'),
+    path('chat_index/', views.chat_index, name='chat_index'),
+    path('messages/<slug:slug>/', views.message_index, name='message_index')
 ]
 
 # This serves media files (like profile pictures) during development

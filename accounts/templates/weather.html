@@ -2,7 +2,6 @@
 {% load weather_extras %}
 
 {% block content %}
-<!-- h-full takes up the height of the parent container, justify-center centers vertically -->
 <div class="mx-auto max-w-4xl flex flex-col justify-center items-center mt-10">
 
     <!-- Title -->
@@ -10,8 +9,7 @@
 
     <div class="flex justify-center items-center h-fit w-fit mb-4">
         <form class="flex justify-center items-center h-fit w-fit" method="GET" action="{% url 'weather' %}">
-            <div
-                class="h-fit w-fit flex justify-between items-center gap-0 rounded-lg border-2 border-black overflow-hidden">
+            <div class="h-fit w-fit flex justify-between items-center gap-0 rounded-lg border-2 border-black overflow-hidden">
                 <label class="px-2 font-michroma w-fit border-r border-black/20">City: </label>
                 <input class="px-2 outline-none" type="text" name="city" placeholder="Search city..." value="{{ city }}">
             </div>

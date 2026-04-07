@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import CustomUser
+from .models import Message
 
 class CustomUserCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -20,4 +21,16 @@ class CustomUserChangeForm(UserChangeForm):
         fields = ("email", "name", "profile_picture")
         widgets = {
             'profile_picture': forms.FileInput(attrs={'class': 'font-sans text-sm'}),
+        }
+
+class MessageForm(forms.ModelForm):
+    class Meta:
+        model = Message
+        fields = ['content']
+        widgets = {
+            'content': forms.Textarea(attrs={
+                'class': 'w-full p-2 border rounded',
+                'placeholder': 'Type your message...',
+                'rows': 1
+            }),
         }

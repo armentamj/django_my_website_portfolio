@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto my-10">
+    <h1 class="text-2xl font-bold mb-6 font-michroma mx-auto w-fit">Friends</h1>
+
+    <!-- Search Bar -->
+    <div class="flex justify-center items-center h-fit w-fit mb-8">
+        <form method="GET" action="{% url 'chat_index' %}" class="flex justify-center items-center h-fit w-fit">
+            <input type="text" name="q" value="{{ query|default:'' }}" placeholder="Search friends..."
+                class="px-2 h-fit w-fit flex justify-between items-center gap-0 rounded-lg border-2 border-black overflow-hidden">
+            <button type="submit" class="cursor-pointer border-box w-full hover:bg-black/30 hover:text-black text-white bg-black duration-300 ease-in px-4 py-0.5 rounded-md font-michroma ml-4">
+                Search
+            </button>
+            {% if query %}
+            <a href="{% url 'chat_index' %}" class="bg-gray-200 text-gray-700 px-4 py-2 rounded-lg flex items-center justify-center">Clear</a>
+            {% endif %}
+        </form>
+    </div>
+
+    <!-- User List -->
+    <div class="bg-white rounded-sm overflow-hidden border border-black-100">
+        <ul class="divide-y divide-gray-200">
+            {% for user in users %}
+            <a href="{% url 'message_index' user.username %}">
+                <li class="px-2 py-2 flex items-center justify-between hover:bg-gray-50">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center font-bold border">
+                            {% if user.profile_picture %}
+                            <!-- The actual uploaded image -->
+                            <img src="{{ user.profile_picture.url }}" alt="Profile"
+                                class="w-16 h-16 rounded-full object-cover border border-black">
+                            {% else %}
+                            <!-- A placeholder if they haven't uploaded one -->
+                            <div class="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center text-xs font-michroma">
+                                {{ user.name|slice:":1"|upper }}
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <p class="text-2xl">{{ user.name }}</p>
+                        </div>
+                    </div>
+                </li>
+            </a>
+            {% empty %}
+            <li class="px-6 py-10 text-center text-gray-500">
+                No users found matching "{{ query }}".
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

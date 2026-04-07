@@ -18,3 +18,53 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.email
+
+from django.db import models
+from django.conf import settings
+
+class Chat(models.Model):
+    # This allows 2, 3, or many people to be in one chat.
+    # 'related_name' lets you do 'user.chats.all()' to find a user's threads.
+    participants = models.ManyToManyField(
+        settings.AUTH_USER_MODEL, 
+        related_name='chats'
+    )
+    
+    # Optional name for group chats (blank/null for 1:1)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    
+    # Track when the conversation started
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    # Track the last message activity
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        if self.name:
+            return self.name
+        return f"Chat with {self.participants.count()} people"
+
+from django.core.validators import MinLengthValidator
+
+class Message(models.Model):
+    # If the Chat is deleted, all messages in it are deleted
+    chat = models.ForeignKey(
+        Chat, 
+        on_delete=models.CASCADE, 
+        related_name='messages'
+    )
+    
+    # The "Sent By" column
+    sender = models.ForeignKey(
+        settings.AUTH_USER_MODEL, 
+        on_delete=models.CASCADE, 
+        related_name='sent_messages'
+    )
+    
+    # Content must have at least 1 character
+    content = models.TextField(validators=[MinLengthValidator(1)])
+    
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.sender.username}: {self.content[:20]}"

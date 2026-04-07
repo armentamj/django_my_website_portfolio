@@ -1,10 +1,23 @@
-import os
-import requests
-from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm, CustomUserChangeForm  # Import your NEW custom form and the form for editing the user.
+import os  # Used to access environment variables (like Weather API key)
+import requests  # Used to send HTTP requests to external APIs (OpenWeatherMap)
+from datetime import datetime  # Used to format dates and times for the weather and messages
+# Django shortcuts for rendering templates, URL redirects, and 404 error handling
+from django.shortcuts import render, redirect, get_object_or_404
+# A "Gatekeeper" that forces a user to log in before they can see a specific page
 from django.contrib.auth.decorators import login_required
-from datetime import datetime
+# Helper to fetch CustomUser model regardless of what name it has in settings
+from django.contrib.auth import get_user_model
+# Import database tables (Chat container and individual Messages)
+from .models import Chat, Message
+# Import custom forms for User sign-up, User profile editing, and Chat messages
+from .forms import (
+    CustomUserCreationForm, 
+    CustomUserChangeForm, 
+    MessageForm
+)
 
+# Assign the custom user model to a variable for easy use in queries
+User = get_user_model()
 
 def signup(request):
     if request.method == 'POST':
@@ -19,6 +32,61 @@ def signup(request):
 
 def home(request):
     return render(request, 'home.html')
+
+@login_required
+def chat_index(request):
+    # 1. Get the search query from the URL (e.g., ?q=joel)
+    query = request.GET.get('q')
+    
+    # 2. Start with all users
+    users = User.objects.all().order_by('username')
+    
+    # 3. If a query exists, filter by username or name (case-insensitive)
+    if query:
+        users = users.filter(
+            models.Q(username__icontains=query) | 
+            models.Q(name__icontains=query)
+        )
+    
+    return render(request, 'chat_index.html', {'users': users, 'query': query})
+
+
+@login_required
+def message_index(request, slug):
+    # 1. Identify the 'other' user by their slug (usually username)
+    other_user = get_object_or_404(User, username=slug)
+
+    # 2. Get or Create the 1:1 Chat container between these two users
+    # We filter for a chat that has BOTH the request.user and the other_user
+    chat = Chat.objects.filter(participants=request.user).filter(participants=other_user).first()
+    
+    if not chat:
+        chat = Chat.objects.create()
+        chat.participants.add(request.user, other_user)
+
+    # 3. Handle sending a new message (POST)
+    if request.method == 'POST':
+        form = MessageForm(request.POST)
+        if form.is_valid():
+            message = form.save(commit=False)
+            message.chat = chat
+            message.sender = request.user
+            message.save()
+            # Redirect to the same page to clear the form and show the new message
+            return redirect('message_index', slug=slug)
+    else:
+        form = MessageForm()
+
+    # 4. Fetch the message history for this chat
+    messages = chat.messages.all().order_by('timestamp')
+
+    return render(request, 'message_index.html', {
+        'chat': chat,
+        'other_user': other_user,
+        'messages': messages,
+        'form': form,
+    })
+
 
 @login_required
 def profile(request):
