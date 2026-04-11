@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="max-w-4xl mx-auto my-10">
+<div class="w-[90%] lg:w-4xl mx-auto my-10 pb-4 lg:text-base text-3xl h-fit">
     <h1 class="text-2xl font-bold mb-6 font-michroma mx-auto w-fit">Friends</h1>
 
     <!-- Search Bar -->
@@ -28,7 +28,7 @@
                         <div class="w-16 h-16 rounded-full flex items-center justify-center font-bold border">
                             {% if user.profile_picture %}
                             <!-- The actual uploaded image -->
-                            <img src="{{ user.profile_picture.url }}" alt="Profile"
+                            <img src="{{ user.profile_picture.url }}" alt="Friend's image."
                                 class="w-16 h-16 rounded-full object-cover border border-black">
                             {% else %}
                             <!-- A placeholder if they haven't uploaded one -->

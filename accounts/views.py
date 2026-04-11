@@ -10,6 +10,7 @@ from django.contrib.auth import get_user_model
 # Import database tables (Chat container and individual Messages)
 from .models import Chat, Message
 # Import custom forms for User sign-up, User profile editing, and Chat messages
+from django.db.models import Q
 from .forms import (
     CustomUserCreationForm, 
     CustomUserChangeForm, 
@@ -35,17 +36,14 @@ def home(request):
 
 @login_required
 def chat_index(request):
-    # 1. Get the search query from the URL (e.g., ?q=joel)
     query = request.GET.get('q')
-    
-    # 2. Start with all users
     users = User.objects.all().order_by('username')
     
-    # 3. If a query exists, filter by username or name (case-insensitive)
     if query:
+        # Use the imported Q directly
         users = users.filter(
-            models.Q(username__icontains=query) | 
-            models.Q(name__icontains=query)
+            Q(username__icontains=query) | 
+            Q(name__icontains=query)
         )
     
     return render(request, 'chat_index.html', {'users': users, 'query': query})
@@ -53,38 +51,20 @@ def chat_index(request):
 
 @login_required
 def message_index(request, slug):
-    # 1. Identify the 'other' user by their slug (usually username)
     other_user = get_object_or_404(User, username=slug)
-
-    # 2. Get or Create the 1:1 Chat container between these two users
-    # We filter for a chat that has BOTH the request.user and the other_user
     chat = Chat.objects.filter(participants=request.user).filter(participants=other_user).first()
     
     if not chat:
         chat = Chat.objects.create()
         chat.participants.add(request.user, other_user)
 
-    # 3. Handle sending a new message (POST)
-    if request.method == 'POST':
-        form = MessageForm(request.POST)
-        if form.is_valid():
-            message = form.save(commit=False)
-            message.chat = chat
-            message.sender = request.user
-            message.save()
-            # Redirect to the same page to clear the form and show the new message
-            return redirect('message_index', slug=slug)
-    else:
-        form = MessageForm()
-
-    # 4. Fetch the message history for this chat
-    messages = chat.messages.all().order_by('timestamp')
+    # DB Catch-up
+    chat.messages.filter(sender=other_user, is_read=False).update(is_read=True)
 
     return render(request, 'message_index.html', {
         'chat': chat,
         'other_user': other_user,
-        'messages': messages,
-        'form': form,
+        'messages': chat.messages.all().order_by('timestamp'),
     })
 
 

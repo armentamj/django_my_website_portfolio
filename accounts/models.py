@@ -1,5 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.conf import settings
+from django.core.validators import MinLengthValidator
 
 class CustomUser(AbstractUser):
     email = models.EmailField(unique=True)
@@ -47,24 +49,33 @@ class Chat(models.Model):
 from django.core.validators import MinLengthValidator
 
 class Message(models.Model):
-    # If the Chat is deleted, all messages in it are deleted
+    # Links this message to a specific conversation
     chat = models.ForeignKey(
-        Chat, 
+        'Chat', 
         on_delete=models.CASCADE, 
         related_name='messages'
     )
     
-    # The "Sent By" column
+    # Identifies who sent the message
     sender = models.ForeignKey(
         settings.AUTH_USER_MODEL, 
         on_delete=models.CASCADE, 
         related_name='sent_messages'
     )
     
-    # Content must have at least 1 character
+    # The actual text content (must be at least 1 character)
     content = models.TextField(validators=[MinLengthValidator(1)])
     
+    # Automatically records when the message was created
     timestamp = models.DateTimeField(auto_now_add=True)
+
+    # Tracks if the message has been seen by other participants
+    # default=False ensures new messages start as 'unread'
+    is_read = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.sender.username}: {self.content[:20]}"
+
+    class Meta:
+        # Ensures messages are always retrieved in chronological order
+        ordering = ['timestamp']
