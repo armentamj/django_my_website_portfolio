@@ -88,3 +88,7 @@ local_settings.py
 .venv
 .env
 db.sqlite3
+
+# Django Static/Media
+src/static/images/staticfiles/
+src/staticfiles/
