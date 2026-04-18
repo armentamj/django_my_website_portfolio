@@ -1,0 +1,143 @@
+# src/locale/de/LC_MESSAGES/django.po
+
+msgid "Full Stack Web Developer"
+msgstr "Full Stack Web-Entwickler"
+
+msgid "Skills"
+msgstr "Fähigkeiten"
+
+msgid "Joel at Miami Beach botanical Garden"
+msgstr "Joel im botanischen Garten von Miami Beach"
+
+msgid ""
+"Hello, I'm Joel - a passionate Jr. Full Stack Web Developer with a "
+"particular love for the creativity of front-end development. Originally "
+"from L.A., CA, I was raised in Miami, FL, and have been calling Germany "
+"home since 2017. My coding journey began in early 2023, and I'm proud to "
+"have earned my Full Stack Web Developer certification from Le Wagon Berlin. "
+"Fast forward to today and I have expanded my stack to include a framework "
+"for front-end, Django, and Python."
+msgstr ""
+"Hallo, ich bin Joel – ein leidenschaftlicher Junior Full Stack Web-Entwickler "
+"mit einer besonderen Vorliebe für die Kreativität der Frontend-Entwicklung. "
+"Ursprünglich aus L.A., Kalifornien, bin ich in Miami, Florida, aufgewachsen "
+"und nenne seit 2017 Deutschland meine Heimat. Meine Reise ins Coding begann "
+"Anfang 2023, und ich bin stolz darauf, meine Zertifizierung als Full Stack "
+"Web-Entwickler bei Le Wagon Berlin abgeschlossen zu haben. Bis heute habe "
+"ich meinen Stack um ein Frontend-Framework, Django und Python erweitert."
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "JavaScript"
+msgstr "JavaScript"
+
+msgid "Ruby"
+msgstr "Ruby"
+
+msgid "Ruby on Rails"
+msgstr "Ruby on Rails"
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Vue.js"
+msgstr "Vue.js"
+
+msgid "Docker"
+msgstr "Docker"
+
+msgid "Figma"
+msgstr "Figma"
+
+msgid "SEO"
+msgstr "SEO (Suchmaschinenoptimierung)"
+
+msgid "Joel M. A. Website Portfolio"
+msgstr "Joel M. A. Web-Portfolio"
+
+msgid "Home"
+msgstr "Startseite"
+
+msgid "Weather"
+msgstr "Wetter"
+
+msgid "Impressum"
+msgstr "Impressum"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Owner:"
+msgstr "Inhaber:"
+
+msgid "Address:"
+msgstr "Adresse:"
+
+msgid "email:"
+msgstr "E-Mail:"
+
+msgid "Disclaimer:"
+msgstr "Haftungsausschluss:"
+
+msgid ""
+"This website is a personal portfolio created exclusively to showcase my "
+"professional skills and projects for employment opportunities. It does not "
+"constitute a commercial offer of services or a business activity. The "
+"contents of this site were prepared with great care. However, I cannot "
+"guarantee the accuracy or completeness of the information provided. As a "
+"service provider, I am responsible for my own content on these pages under "
+"general laws (§ 7 paragraph 1 DDG). This website contains links to my "
+"external profiles on GitHub and LinkedIn. While these links were checked for "
+"legal violations at the time of creation, I have no influence over the "
+"future design or content of these third-party sites and cannot assume "
+"liability for them."
+msgstr ""
+"Diese Website ist ein persönliches Portfolio, das ausschließlich dazu dient, "
+"meine beruflichen Fähigkeiten und Projekte für Beschäftigungsmöglichkeiten "
+"vorzustellen. Sie stellt kein kommerzielles Dienstleistungsangebot oder "
+"eine geschäftliche Tätigkeit dar. Die Inhalte dieser Seite wurden mit "
+"größter Sorgfalt erstellt. Für die Richtigkeit oder Vollständigkeit der "
+"bereitgestellten Informationen kann ich jedoch keine Gewähr übernehmen. "
+"Als Diensteanbieter bin ich gemäß den allgemeinen Gesetzen (§ 7 Abs. 1 DDG) "
+"für eigene Inhalte auf diesen Seiten verantwortlich. Diese Website enthält "
+"Links zu meinen externen Profilen auf GitHub und LinkedIn. Obwohl diese "
+"Links zum Zeitpunkt der Erstellung auf Rechtsverstöße überprüft wurden, "
+"habe ich keinen Einfluss auf die zukünftige Gestaltung oder die Inhalte "
+"dieser Drittanbieter-Seiten und kann für diese keine Haftung übernehmen."
+
+msgid "Joel Armenta's linked in profile"
+msgstr "Joel Armentas LinkedIn-Profil"
+
+msgid "github profile for armentamj"
+msgstr "GitHub-Profil von armentamj"
+
+msgid "Email me"
+msgstr "Schreib mir eine E-Mail"
+
+msgid "City:"
+msgstr "Stadt:"
+
+msgid "Search city..."
+msgstr "Stadt suchen..."
+
+msgid "Search"
+msgstr "Suchen"
+
+msgid "Current:"
+msgstr "Aktuell:"
+
+msgid "Feels Like:"
+msgstr "Gefühlt:"
+
+msgid "Humidity:"
+msgstr "Luftfeuchtigkeit:"
+
+msgid "Wind: %(deg)s° / %(speed)s KPH"
+msgstr "Wind: %(deg)s° / %(speed)s km/h"
+
+msgid "5-Day Forecast"
+msgstr "5-Tage-Vorhersage"

@@ -8,3 +8,18 @@
   * the scope of this path.
   */
 @source "../../../**/*.{html,py,js}";
+
+/* 1. Register the local font file */
+@font-face {
+  font-family: 'Michroma';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  /* Use the web path that Django serves */
+  src: url('/static/fonts/michroma-v21-latin-regular.woff2') format('woff2');
+}
+
+/* 2. Add it to your Tailwind theme */
+@theme {
+  --font-michroma: "Michroma", sans-serif;
+}

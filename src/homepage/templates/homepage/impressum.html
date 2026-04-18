@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+<!-- This is so no bots crawl to this page and my personal info is not all over the internet so easily. -->
+{% block extra_head %}
+<meta name="robots" content="noindex, nofollow">
+{% endblock %}
+
+<!-- This is for loading pics -->
+{% load static %}
+
+{% block content %}
+
+<div class="w-[90%] lg:w-4xl mx-auto my-10 lg:text-base text-3xl pb-4 relative">
+    <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-6">{% trans "Impressum" %}</h1>
+    <div class="flex flex-col justify-start items-start gap-4">
+        <p><strong>{% trans "Owner:" %}</strong> Joel Mario Armenta</p>
+        <p><strong>{% trans "Address:" %}</strong> Hansering 61, 23558 Lübeck Germany</p>
+        <p><strong>{% trans "email:" %}</strong> armentamj@gmail.com</p>
+        <p><strong>{% trans "Disclaimer:" %}</strong>
+            {% blocktrans %}
+            This website is a personal portfolio created exclusively to showcase my professional skills and projects for
+            employment
+            opportunities. It does not constitute a commercial offer of services or a business activity. The contents of
+            this site were prepared with great care. However, I cannot guarantee the accuracy or completeness of the
+            information provided. As a service provider, I am responsible for my own content on these pages under
+            general laws (§ 7
+            paragraph 1 DDG). This website contains links to my external profiles on GitHub and LinkedIn. While these
+            links were checked for legal
+            violations at the time of creation, I have no influence over the future design or content of these
+            third-party sites and
+            cannot assume liability for them.
+            {% endblocktrans %}
+        </p>
+    </div>
+    <!-- Links and the bottom in the midle -->
+    <div class="mt-20 flex gap-4 w-fit mx-auto">
+        <a href="http://www.linkedin.com/in/joel-armenta-821a80315" target="_blank"><img
+                class="w-24 h-24 lg:w-12  lg:h-12 object-contain" src="{% static 'images/linkedin.svg' %}"
+                alt="{% trans 'Joel Armenta\'s linked in profile' %}"
+                title="{% trans 'Joel Armenta\'s linked in profile' %}"></a>
+        <a href="https://github.com/armentamj" target="_blank"><img class="w-24 h-24 lg:w-12  lg:h-12 object-contain"
+                src="{% static 'images/github.svg' %}" alt="{% trans 'github profile for armentamj' %}"
+                title="{% trans 'github profile for armentamj' %}"></a>
+        <a href="mailto:armentamj+jobprospects@gmail.com" target="_blank"><img
+                class="w-24 h-24 lg:w-12  lg:h-12 object-contain" src="{% static 'images/email.svg' %}"
+                alt="{% trans 'Email me' %}" title="{% trans 'Email me' %}"></a>
+    </div>
+</div>
+
+{% endblock %}
