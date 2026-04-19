@@ -1,4 +1,4 @@
-service:
+services:
   mdwp:
     build: .
     container_name: django-docker
