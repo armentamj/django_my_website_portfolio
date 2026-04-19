@@ -24,6 +24,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy everything from local folder
 COPY src/ ./
 
+# Migrate Database
+RUN python manage.py migrate
+
 # Compile i18n translation files
 # (This converts your .po files into .mo binary files)
 RUN python manage.py compilemessages
