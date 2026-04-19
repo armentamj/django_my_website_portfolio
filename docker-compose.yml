@@ -7,6 +7,8 @@ services:
     build: .
     container_name: mdwp
     hostname: mdwp
+    volumes:
+      - ./static_prod:/app/static_prod # Map the static folder to your host
     ports:
       - "8000:8000"
     environment:
