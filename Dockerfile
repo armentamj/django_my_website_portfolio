@@ -7,11 +7,8 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1 
 
 # 1. Install system dependencies & Tailwind CLI
-# 1. Install system dependencies & Tailwind CLI
-RUN apt-get update && apt-get install -y \
-    gettext \
-    curl \
-    RUN apt-get update && apt-get install -y gettext curl && curl -sLO https://github.com && chmod +x tailwindcss-linux-x64 && mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y gettext curl && curl -sLO https://github.com && chmod +x tailwindcss-linux-x64 && mv tailwindcss-linux-x64 /usr/local/bin/tailwindcss && rm -rf /var/lib/apt/lists/*
+
 
 # 2. Install Python dependencies
 RUN pip install --upgrade pip
