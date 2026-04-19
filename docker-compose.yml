@@ -5,7 +5,8 @@ networks:
 services:
   mdwp:
     build: .
-    container_name: django-docker
+    container_name: mdwp
+    hostname: mdwp
     ports:
       - "8000:8000"
     environment:
