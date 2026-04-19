@@ -7,6 +7,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1 
 
 # 1. Install system dependencies & Tailwind CLI
+# 1. Install system dependencies & Tailwind CLI
 RUN apt-get update && apt-get install -y \
     gettext \
     curl \
