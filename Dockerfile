@@ -22,7 +22,7 @@ COPY requirements.txt /app/
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy everything from local folder
-COPY ./src/* /app/
+COPY src/* /app/
 
 # Compile i18n translation files
 # (This converts your .po files into .mo binary files)
