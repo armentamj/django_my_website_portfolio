@@ -8,12 +8,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.static import static
 
 # Global patterns that should not have a language prefix
 urlpatterns = [
     # Built-in view to handle the language switching form logic
     path('i18n/', include('django.conf.urls.i18n')),
-]
+]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 # Patterns wrapped in i18n_patterns will automatically include the language prefix
 urlpatterns += i18n_patterns(
