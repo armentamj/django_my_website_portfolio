@@ -9,6 +9,9 @@
     {% block extra_head %}{% endblock %}
     <!-- Tailwind v4 -->
     {% tailwind_css %}
+
+    <!-- Weather Icons CDN -->
+    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 
 
@@ -17,22 +20,23 @@
         <div class="flex justify-between items-center h-fit gap-4">
             <a href="{% url 'home' %}" class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Home" %}</a>
             <a class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" href="{% url 'weather' %}">{% trans "Weather" %}</a>
-            <!-- Single Toggle Button Form -->
-            <form action="{% url 'set_language' %}" method="post" class="mr-4">
-                {% csrf_token %}
-                <input name="next" type="hidden" value="{{ request.get_full_path }}">
-                {% if LANGUAGE_CODE == 'de' %}
-                <!-- If it's German, show button to switch to English -->
-                <button type="submit" name="language" value="en" class="px-2 py-0.5 border border-black rounded hover:bg-black hover:text-white duration-300">
-                    EN
-                </button>
-                {% else %}
-                <!-- If it's English, show button to switch to German -->
-                <button type="submit" name="language" value="de" class="px-2 py-0.5 border border-black rounded hover:bg-black hover:text-white duration-300">
-                    DE
-                </button>
-                {% endif %}
-            </form>
+            <!-- The action must point to the 'set_language' view provided by the i18n include -->
+            <div class="w-fit h-fit">
+                <form action="{% url 'set_language' %}" method="post">
+                    {% csrf_token %}
+                
+                    <!-- Check if '/en/' is in the current path -->
+                    {% if '/en/' in request.path or request.path == '/en' %}
+                    <!-- If it is in English, switch to German (remove /en) -->
+                    <input name="next" type="hidden" value="{{ request.path|slice:'3:' }}">
+                    <button class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="de">Deutsch</button>
+                    {% else %}
+                    <!-- We are in German, switch to English (add /en) -->
+                    <input name="next" type="hidden" value="/en{{ request.path }}">
+                    <button class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="en">English</button>
+                    {% endif %}
+                </form>
+            </div>
         </div>
         <div class="flex justify-between items-center h-fit gap-4">
             <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-michroma">

@@ -42,7 +42,7 @@ def weather(request):
         # STEP 1: GEOCODING
         # The weather API needs coordinates (lat/lon), so we send the city name first
         # to get the exact location data.
-        geo_url = f"https://openweathermap.org{city}&limit=1&appid={api_key}"
+        geo_url = f"https://api.openweathermap.org/geo/1.0/direct?q={city}&limit=1&appid={api_key}"
         geo_res = requests.get(geo_url).json()
         
         # If the API doesn't return anything, the city name is probably misspelled
@@ -63,12 +63,12 @@ def weather(request):
         # STEP 2: CURRENT WEATHER
         # We ask for the current weather using the coordinates.
         # Notice we pass '&lang=' so the description matches our site's language.
-        curr_url = f"https://openweathermap.org{lat}&lon={lon}&units=metric&appid={api_key}&lang={current_lang}"
+        curr_url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=metric&appid={api_key}&lang={current_lang}"
         curr_res = requests.get(curr_url).json()
 
         # STEP 3: 5-DAY FORECAST
         # We fetch the 3-hour interval forecast for the next 5 days.
-        fore_url = f"https://openweathermap.org{lat}&lon={lon}&appid={api_key}&units=metric&lang={current_lang}"
+        fore_url = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}&units=metric&lang={current_lang}"
         fore_res = requests.get(fore_url).json()
 
         # We need to group the 3-hour data points into actual daily blocks

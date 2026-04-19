@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% load weather_extras %}
 {% load i18n %}
 
@@ -13,8 +14,7 @@
             <div
                 class="h-fit w-fit flex justify-between items-center gap-0 rounded-lg border-2 border-black overflow-hidden">
                 <label class="px-2 font-michroma w-fit border-r border-black/20">{% trans "City:" %} </label>
-                <input class="px-2 outline-none" type="text" name="city" placeholder="{% trans 'Search city...' %}"
-                    value="{{ city }}">
+                <input class="px-2 outline-none" type="text" name="city" placeholder="{% trans 'Search city...' %}" value="{{ city }}">
             </div>
             <div class="ml-4 h-fit w-fit flex justify-center items-center">
                 <button
@@ -38,14 +38,33 @@
         <h2 class="font-bold text-xl font-michroma">{{ current.curr_res.name }}, {{ current.curr_res.sys.country }}</h2>
         <i class="wi wi-owm-{{ current.id }} text-[160px] text-blue-400 my-4"></i>
         <div class="text-center space-y-1">
-            <p class="text-lg">{% trans "Current:" %} <span class="font-bold">{{ current.temp }}°C</span></p>
-            <p class="text-lg">{% trans "Feels Like:" %} {{ current.curr_res.main.feels_like }}°C</p>
-            <p class="capitalize text-lg">{{ current.description }}</p>
-            <p class="text-lg">{% trans "Humidity:" %} {{ current.humidity }}%</p>
             <p class="text-lg">
-                {% blocktrans with deg=current.wind.deg|to_cardinal speed=current.wind.speed|floatformat:0 %}
-                Wind: {{ deg }}° / {{ speed }} KPH
+                {% trans "Current:" %}
+                <span class="font-bold">{{ current.temp }}</span>
+                <strong class="font-bold">{% if units == 'imperial' %}°F{% else %}°C{% endif %}</strong>
+            </p>
+            
+            <p class="text-lg">
+                {% trans "Feels Like:" %} <strong>{{ current.curr_res.main.feels_like|floatformat:0 }} {% if units == 'imperial' %}°F{% else %}°C{% endif %}</strong>
+            </p>
+            <p class="capitalize text-lg"><strong>{{ current.description }}</strong></p>
+            <p class="text-lg">{% trans "Humidity:" %} <strong>{{ current.humidity }}%</strong></p>
+            <p class="text-lg">
+                {% with direction=current.wind.deg|to_cardinal %}
+                {% trans direction as translated_dir %}
+            
+                {# Use the 'units' variable to pick the right string #}
+                {% if units == 'imperial' %}
+                {% blocktrans with deg=translated_dir speed=current.wind.speed|floatformat:0 %}
+                Wind: <strong>{{ deg }} / {{ speed }} MPH</strong>
                 {% endblocktrans %}
+                {% else %}
+                {% blocktrans with deg=translated_dir speed=current.wind.speed|floatformat:0 %}
+                Wind: <strong>{{ deg }} / {{ speed }} KPH</strong>
+                {% endblocktrans %}
+                {% endif %}
+            
+                {% endwith %}
             </p>
         </div>
     </div>

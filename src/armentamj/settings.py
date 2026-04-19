@@ -151,7 +151,12 @@ INTERNAL_IPS = [
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
 
-LANGUAGE_CODE = 'de-de'       # Uses German date/time formats
+LANGUAGE_CODE = 'de'       # Uses English date/time formats
+LANGUAGES = [
+    ('de', _('German')),
+    ('en', _('English')),
+]
+
 TIME_ZONE = 'Europe/Berlin'   # Matches your local time
 
 USE_I18N = True
@@ -168,6 +173,7 @@ STATIC_URL = 'static_prod/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+    BASE_DIR / "theme" / "static",
 ]
 
 LOCALE_PATHS = [

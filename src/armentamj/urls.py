@@ -31,6 +31,6 @@ urlpatterns += i18n_patterns(
     path("__reload__/", include("django_browser_reload.urls")),
     
     # Force the language prefix even for the default language
-    prefix_default_language=True 
+    prefix_default_language=False
 )
 

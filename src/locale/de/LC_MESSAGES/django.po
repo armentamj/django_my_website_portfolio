@@ -25,7 +25,7 @@ msgid "Joel at Miami Beach botanical Garden"
 msgstr "Joel im botanischen Garten von Miami Beach"
 
 msgid ""
-"Hello, I'm Joel - a passionate Jr. Full Stack Web Developer with a "
+"Hello, I'm a passionate Jr. Full Stack Web Developer with a "
 "particular love for the creativity of front-end development. Originally "
 "from L.A., CA, I was raised in Miami, FL, and have been calling Germany "
 "home since 2017. My coding journey began in early 2023, and I'm proud to "
@@ -33,7 +33,7 @@ msgid ""
 "Fast forward to today and I have expanded my stack to include a framework "
 "for front-end, Django, and Python."
 msgstr ""
-"Hallo, ich bin Joel – ein leidenschaftlicher Junior Full Stack Web-Entwickler "
+"Hallo, ich bin ein leidenschaftlicher Junior Full Stack Web-Entwickler "
 "mit einer besonderen Vorliebe für die Kreativität der Frontend-Entwicklung. "
 "Ursprünglich aus L.A., Kalifornien, bin ich in Miami, Florida, aufgewachsen "
 "und nenne seit 2017 Deutschland meine Heimat. Meine Reise ins Coding begann "
@@ -156,3 +156,51 @@ msgstr "Wind: %(deg)s° / %(speed)s km/h"
 
 msgid "5-Day Forecast"
 msgstr "5-Tage-Vorhersage"
+
+msgid "N"
+msgstr "N"
+
+msgid "NNE"
+msgstr "NNO"
+
+msgid "NE"
+msgstr "NO"
+
+msgid "ENE"
+msgstr "ONO"
+
+msgid "E"
+msgstr "O"
+
+msgid "ESE"
+msgstr "OSO"
+
+msgid "SE"
+msgstr "SO"
+
+msgid "SSE"
+msgstr "SSO"
+
+msgid "S"
+msgstr "S"
+
+msgid "SSW"
+msgstr "SSW"
+
+msgid "SW"
+msgstr "SW"
+
+msgid "WSW"
+msgstr "WSW"
+
+msgid "W"
+msgstr "W"
+
+msgid "WNW"
+msgstr "WNW"
+
+msgid "NW"
+msgstr "NW"
+
+msgid "NNW"
+msgstr "NNW"
