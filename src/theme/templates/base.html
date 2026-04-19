@@ -9,12 +9,6 @@
     {% block extra_head %}{% endblock %}
     <!-- Tailwind v4 -->
     {% tailwind_css %}
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Michroma&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cloudflare.com">
 </head>
 
 
@@ -22,16 +16,29 @@
     <nav class="h-20 bg-white p-4 text-black flex justify-between items-end z-10 shadow-lg sticky top-0 left-0">
         <div class="flex justify-between items-center h-fit gap-4">
             <a href="{% url 'home' %}" class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Home" %}</a>
-            <a class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm"
-                href="{% url 'weather' %}">{% trans "Weather" %}</a>
+            <a class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" href="{% url 'weather' %}">{% trans "Weather" %}</a>
+            <!-- Single Toggle Button Form -->
+            <form action="{% url 'set_language' %}" method="post" class="mr-4">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ request.get_full_path }}">
+                {% if LANGUAGE_CODE == 'de' %}
+                <!-- If it's German, show button to switch to English -->
+                <button type="submit" name="language" value="en" class="px-2 py-0.5 border border-black rounded hover:bg-black hover:text-white duration-300">
+                    EN
+                </button>
+                {% else %}
+                <!-- If it's English, show button to switch to German -->
+                <button type="submit" name="language" value="de" class="px-2 py-0.5 border border-black rounded hover:bg-black hover:text-white duration-300">
+                    DE
+                </button>
+                {% endif %}
+            </form>
         </div>
         <div class="flex justify-between items-center h-fit gap-4">
             <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-michroma">
                 {{ user.username|slice:":1"|upper }}
             </div>
-            <a href="{% url 'impressum' %}"
-                class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans
-                "Impressum" %}</a>
+            <a href="{% url 'impressum' %}" class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Impressum" %}</a>
             <!-- Direct link to the Admin Login/Panel -->
             <a href="/admin/" class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">
                 {% trans "Admin" %}

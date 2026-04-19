@@ -1,0 +1,30 @@
+# Git and IDEs
+
+.git
+.gitignore
+.vscode
+.idea
+
+# Python/Django environment
+
+**/.venv/
+**/venv/ \*_/**pycache**/
+_.pyc
+_.pyo
+_.pyd
+
+# Local Database & Secrets
+
+db.sqlite3
+.env
+
+# Build Artifacts & Logs
+
+\*.log
+src/staticfiles/ # Already ignored in git, keep it out of Docker too
+node_modules/ # If ever install NPM locally for Tailwind
+
+# Docker-specific
+
+Dockerfile
+.dockerignore

@@ -85,6 +85,28 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            BASE_DIR / 'theme' / 'templates',
+        ], 
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug', # Added debug for better error info
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
+
+
+
 WSGI_APPLICATION = 'armentamj.wsgi.application'
 
 TAILWIND_APP_NAME = "theme"
@@ -121,13 +143,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 INTERNAL_IPS = [
     "127.0.0.1",
+    "::1", 
 ]
 
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'de'
 
 LANGUAGE_CODE = 'de-de'       # Uses German date/time formats
 TIME_ZONE = 'Europe/Berlin'   # Matches your local time
