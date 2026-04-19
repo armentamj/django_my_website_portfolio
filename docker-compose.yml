@@ -1,3 +1,7 @@
+networks:
+  proxy:
+    external: true
+
 services:
   mdwp:
     build: .
@@ -8,3 +12,5 @@ services:
       DJANGO_SECRET_KEY: ${SECRET_KEY}
     env_file:
       - .env
+    networks:
+      - proxy
