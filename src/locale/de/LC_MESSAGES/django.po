@@ -133,6 +133,9 @@ msgstr "GitHub-Profil von armentamj"
 msgid "Email me"
 msgstr "Schreib mir eine E-Mail"
 
+msgid "Weather icons provided by Erik Flowers."
+msgstr "Wetter-Icons bereitgestellt von Erik Flowers."
+
 msgid "City:"
 msgstr "Stadt:"
 
