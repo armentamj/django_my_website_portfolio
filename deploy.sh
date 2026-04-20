@@ -15,6 +15,6 @@ sleep 5
 # Run migrations
 docker compose exec mdwp python manage.py migrate --noinput
 # Optional: Collect static files if you changed CSS/JS
-docker compose exec web python manage.py collectstatic --noinput
+docker compose exec mdwp python manage.py collectstatic --noinput
 
 echo "Deployment finished!"
