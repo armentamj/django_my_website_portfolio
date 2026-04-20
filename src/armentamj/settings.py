@@ -30,6 +30,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['www.armentamj.de','localhost']
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://armentamj.de",
+    "https://armentamj.de",
+]
+
 
 # Application definition
 
@@ -69,21 +74,6 @@ if DEBUG:
     ]
 
 ROOT_URLCONF = 'armentamj.urls'
-
-TEMPLATES = [
-    {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-            ],
-        },
-    },
-]
 
 TEMPLATES = [
     {
