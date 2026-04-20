@@ -9,6 +9,7 @@ services:
     hostname: mdwp
     volumes:
       - ./static_prod:/app/static_prod # Map the static folder to your host
+      - ./db.sqlite3:/app/db.sqlite3
     ports:
       - "8000:8000"
     environment:

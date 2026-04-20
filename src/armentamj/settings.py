@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['www.armentamj.de','localhost']
 
 CSRF_TRUSTED_ORIGINS = [
     "https://armentamj.de",
-    "https://armentamj.de",
+    "https://www.armentamj.de",
 ]
 
 
