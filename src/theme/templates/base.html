@@ -15,10 +15,20 @@
 
 
 <body class="w-full font-michroma bg-stone-50">
-    <nav class="h-20 bg-white p-4 text-black flex justify-between items-end z-10 shadow-lg sticky top-0 left-0">
-        <div class="flex justify-between items-center h-fit gap-4">
-            <a href="{% url 'home' %}" class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Home" %}</a>
-            <a class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" href="{% url 'weather' %}">{% trans "Weather" %}</a>
+    <nav class="transition-all duration-300 transform min-h-20 lg:h-24 h-fit bg-white p-4 text-black flex flex-col lg:flex-row justify-start lg:justify-between items-center lg:items-end z-10 shadow-lg sticky top-0 left-0 lg:gap-0 gap-4">
+        <button aria-label="Toggle Menu" class="menubutton block lg:hidden h-18 w-24 focus:outline-none cursor-pointer absolute top-6 left-5">
+            <div class="menucontainer relative w-full h-full">
+                <p class="line-one h-0.5 rounded-sm bg-black Transform-GPU top-0 absolute right-1/2 translate-x-1/2 w-1/2  font-bold origin-center block leading-none transition-all duration-300 transform">
+                </p>
+                <p class="line-two h-0.5 rounded-sm bg-black Transform-GPU top-4 absolute right-1/2 translate-x-1/2 w-1/2 font-bold block leading-none transition-all duration-300">
+                </p>
+                <p class="line-three h-0.5 rounded-sm bg-black Transform-GPU top-8 absolute right-1/2 translate-x-1/2 w-1/2 font-bold origin-center block leading-none transition-all duration-300 transform">
+                </p>
+            </div>
+        </button>
+        <div class="firstmen hidden lg:flex w-full lg:w-fit flex-col lg:flex-row justify-start lg:justify-between items-center h-fit gap-4">
+            <a href="{% url 'home' %}" class="lg:text-base text-2xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Home" %}</a>
+            <a class="lg:text-base text-2xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" href="{% url 'weather' %}">{% trans "Weather" %}</a>
             <!-- The action must point to the 'set_language' view provided by the i18n include -->
             <div class="w-fit h-fit">
                 <form action="{% url 'set_language' %}" method="post">
@@ -28,24 +38,20 @@
                     {% if '/en/' in request.path or request.path == '/en' %}
                     <!-- If it is in English, switch to German (remove /en) -->
                     <input name="next" type="hidden" value="{{ request.path|slice:'3:' }}">
-                    <button class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="de">Deutsch</button>
+                    <button class="lg:text-base text-2xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="de">Deutsch</button>
                     {% else %}
                     <!-- We are in German, switch to English (add /en) -->
                     <input name="next" type="hidden" value="/en{{ request.path }}">
-                    <button class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="en">English</button>
+                    <button class="lg:text-base text-2xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="en">English</button>
                     {% endif %}
                 </form>
             </div>
         </div>
-        <div class="flex justify-between items-center h-fit gap-4">
-            <div class="w-8 h-8 rounded-full bg-gray-200 flex items-center justify-center text-xs font-michroma">
-                {{ user.username|slice:":1"|upper }}
-            </div>
-            <a href="{% url 'impressum' %}" class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Impressum" %}</a>
+        <div class="secondmen hidden lg:flex w-full lg:w-fit flex-col lg:flex-row justify-start lg:justify-between items-center h-fit gap-4">
+            <div class="lg:w-8 lg:h-8 w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center text-xl lg:text-xs font-michroma">{{ user.username|slice:":1"|upper }}</div>
+            <a href="{% url 'impressum' %}" class="lg:text-base text-2xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Impressum" %}</a>
             <!-- Direct link to the Admin Login/Panel -->
-            <a href="/admin/" class="mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">
-                {% trans "Admin" %}
-            </a>
+            <a href="/admin/" class="lg:text-base text-2xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Admin" %}</a>
         </div>
     </nav>
 
@@ -54,6 +60,37 @@
         <!-- This is like 'yield' in Rails -->
         {% endblock %}
     </main>
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+                const btn = document.querySelector('.menubutton');
 
+                // Burger lines
+                const l1 = document.querySelector('.line-one');
+                const l2 = document.querySelector('.line-two');
+                const l3 = document.querySelector('.line-three');
+
+                // Menu containers
+                const firstMen = document.querySelector('.firstmen');
+                const secondMen = document.querySelector('.secondmen');
+
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        // Animate burger to X and back
+                        l1.classList.toggle("rotate-45");
+                        l1.classList.toggle("translate-y-[16px]");
+                        l2.classList.toggle("opacity-0");
+                        l3.classList.toggle("-rotate-45");
+                        l3.classList.toggle("-translate-y-[16px]");
+
+                        // Toggle menus visibility
+                        // We use ?. just in case one menu isn't on the page (e.g. if user is logged out)
+                        firstMen?.classList.toggle("hidden");
+                        firstMen?.classList.toggle("flex");
+                        secondMen?.classList.toggle("hidden");
+                        secondMen?.classList.toggle("flex");
+                    });
+                }
+            });
+    </script>
+</body>
 </html>

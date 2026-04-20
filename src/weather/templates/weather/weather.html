@@ -7,7 +7,7 @@
 <div class="w-[90%] lg:w-4xl mx-auto my-10 lg:text-base text-3xl h-fit flex flex-col justify-center items-center pb-4">
 
     <!-- Title -->
-    <h1 class="text-2xl font-bold mb-6 font-michroma">{% trans "Weather" %}</h1>
+    <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-4">{% trans "Weather" %}</h1>
 
     <div class="flex justify-center items-center h-fit w-fit mb-4">
         <form class="flex justify-center items-center h-fit w-fit" method="GET" action="{% url 'weather' %}">
@@ -34,36 +34,31 @@
 
     {% if current %}
     <!-- Current Weather Section -->
-    <div class="flex flex-col items-center mb-8">
-        <h2 class="font-bold text-xl font-michroma">{{ current.curr_res.name }}, {{ current.curr_res.sys.country }}</h2>
-        <i class="wi wi-owm-{{ current.id }} text-[160px] text-blue-400 my-4"></i>
-        <div class="text-center space-y-1">
-            <p class="text-lg">
-                {% trans "Current:" %}
-                <span class="font-bold">{{ current.temp }}</span>
-                <strong class="font-bold">{% if units == 'imperial' %}°F{% else %}°C{% endif %}</strong>
+    <div class="flex flex-col items-center mb-16 lg:mb-8">
+        <h2 class="font-bold font-bold font-michroma">{{ current.curr_res.name }}, {{ current.curr_res.sys.country }}</h2>
+        <i class="wi wi-owm-{{ current.id }} text-[240px] lg:text-[160px] text-blue-400 my-4"></i>
+        <div class="text-center space-y-3 lg:space-y-1">
+            <p class="{% if 'en' in request.path %}capitalize{% endif %} lg:text-base text-3xl">{{ current.description }}</p>
+            <p class="lg:text-base text-3xl">{% trans "Current:" %}{{ current.temp }}{% if units == 'imperial' %}°F{% else %}°C{% endif %}
             </p>
-            
-            <p class="text-lg">
-                {% trans "Feels Like:" %} <strong>{{ current.curr_res.main.feels_like|floatformat:0 }} {% if units == 'imperial' %}°F{% else %}°C{% endif %}</strong>
+            <p class="lg:text-base text-3xl">
+                {% trans "Feels Like:" %} {{ current.curr_res.main.feels_like|floatformat:0 }} {% if units == 'imperial' %}°F{% else %}°C{% endif %}
             </p>
-            <p class="capitalize text-lg"><strong>{{ current.description }}</strong></p>
-            <p class="text-lg">{% trans "Humidity:" %} <strong>{{ current.humidity }}%</strong></p>
-            <p class="text-lg">
+            <p class="lg:text-base text-3xl">{% trans "Humidity:" %} {{ current.humidity }}%</p>
+            <p class="lg:text-base text-3xl">
                 {% with direction=current.wind.deg|to_cardinal %}
                 {% trans direction as translated_dir %}
             
                 {# Use the 'units' variable to pick the right string #}
                 {% if units == 'imperial' %}
                 {% blocktrans with deg=translated_dir speed=current.wind.speed|floatformat:0 %}
-                Wind: <strong>{{ deg }} / {{ speed }} MPH</strong>
+                Wind: {{ deg }} / {{ speed }} MPH
                 {% endblocktrans %}
                 {% else %}
                 {% blocktrans with deg=translated_dir speed=current.wind.speed|floatformat:0 %}
-                Wind: <strong>{{ deg }} / {{ speed }} KPH</strong>
+                Wind: {{ deg }} / {{ speed }} KPH
                 {% endblocktrans %}
                 {% endif %}
-            
                 {% endwith %}
             </p>
         </div>
@@ -71,20 +66,19 @@
 
     <!-- 5-Day Forecast Section -->
     <div class="w-full">
-        <h2 class="font-bold mb-4 text-center font-michroma border-b border-black/10 pb-2">{% trans "5-Day Forecast" %}
-        </h2>
+        <h2 class="font-bold mb-4 text-center font-michroma border-b border-black/30 pb-4 lg:pb-2">{% trans "5-Day Forecast" %}</h2>
         <div class="flex justify-center items-start gap-15">
             {% for day in forecast %}
-            <div class="flex flex-col items-center text-center gap-3">
+            <div class="flex flex-col items-center text-center gap-5 lg:gap-3">
                 <!-- 
                   Instead of day.day, this uses the date filter with "l" (lowercase L).
                   This tells Django to look at the date object and output the full 
                   day name in the current active language (e.g. Montag, Dienstag).
                 -->
-                <p class="font-semibold text-sm">{{ day.date_obj|date:"l" }}</p>
-                <i class="wi wi-owm-{{ day.id }} text-3xl text-blue-400"></i>
-                <p class="text-sm font-bold">{{ day.max_temp }}°</p>
-                <p class="text-sm text-gray-500">{{ day.min_temp }}°</p>
+                <p class="mb-0.5 lg:mb-0 font-semibold lg:text-sm text-3xl">{{ day.date_obj|date:"D" }}</p>
+                <i class="mb-0.5 lg:mb-0 wi wi-owm-{{ day.id }} text-6xl lg:text-3xl text-blue-400"></i>
+                <p class="mb-0.5 lg:mb-0 lg:text-sm text-3xl font-bold">{{ day.max_temp }}°</p>
+                <p class="mb-0.5 lg:mb-0 lg:text-sm text-3xl text-gray-500">{{ day.min_temp }}°</p>
             </div>
             {% endfor %}
         </div>
