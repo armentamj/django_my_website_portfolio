@@ -25,12 +25,6 @@ RUN tailwindcss -i theme/static_src/src/styles.css -o theme/static/css/dist/styl
 # 5. Compile i18n
 RUN python manage.py compilemessages
 
-# 6. Collect Static
-RUN python manage.py collectstatic --noinput
-
-# 7. Migrate (Note: Keeping this here as requested, but ensure DB is accessible)
-RUN python manage.py migrate
-
 EXPOSE 8000
  
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
