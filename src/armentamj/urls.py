@@ -18,7 +18,8 @@ urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
 
     # This returns the text directly without needing a separate .txt file
-    path('robots.txt', lambda r: HttpResponse("User-agent: *\nAllow: /", content_type="text/plain")),
+    path('robots.txt', lambda r: HttpResponse("User-agent: facebookexternalhit\nAllow: /\n\nUser-agent: *\nAllow: /", content_type="text/plain")),
+
 
 ]  + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
