@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load svg %}
 
 <!-- This is for loading pics -->
 {% load static %}
@@ -32,17 +33,12 @@
     </div>
     <!-- Links and the bottom in the midle -->
     <div class="mt-20 flex gap-4 w-fit mx-auto">
-        <a href="http://www.linkedin.com/in/joel-armenta-821a80315" target="_blank"><img
-                class="w-24 h-24 lg:w-12  lg:h-12 object-contain" src="{% static 'images/linkedin.svg' %}"
-                alt="{% trans 'Joel Armenta\'s linked in profile' %}"
-                title="{% trans 'Joel Armenta\'s linked in profile' %}"></a>
-        <a href="https://github.com/armentamj" target="_blank"><img class="w-24 h-24 lg:w-12  lg:h-12 object-contain"
-                src="{% static 'images/github.svg' %}" alt="{% trans 'github profile for armentamj' %}"
-                title="{% trans 'github profile for armentamj' %}"></a>
-        <a href="mailto:armentamj+jobprospects@gmail.com" target="_blank"><img
-                class="w-24 h-24 lg:w-12  lg:h-12 object-contain" src="{% static 'images/email.svg' %}"
-                alt="{% trans 'Email me' %}" title="{% trans 'Email me' %}"></a>
+        <a href="http://www.linkedin.com/in/joel-armenta-821a80315" class="display-block w-24 h-24 lg:w-12 lg:h-12" target="_blank"><span class="w-full h-full [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Joel Armenta\'s linked in profile' %}" title="{% trans 'Joel Armenta\'s linked in profile' %}">{% svg 'linkedin' %}</span></a>
+        <a href="https://github.com/armentamj" class="display-block w-24 h-24 lg:w-12 lg:h-12" target="_blank"><span class="h-full w-full [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'github profile for armentamj' %}" title="{% trans 'github profile for armentamj' %}">{% svg 'github' %}</span></a>
+        <a href="mailto:armentamj+jobprospects@gmail.com" class="display-block w-24 h-24 lg:w-12 lg:h-12" target="_blank"><span class="w-full h-full [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Email me' %}" title="{% trans 'Email me' %}">{% svg 'email' %}</span></a>
     </div>
 </div>
+
+
 
 {% endblock %}

@@ -1,11 +1,30 @@
 {% load tailwind_tags %}
 {% load i18n %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE }}">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="description" content="Portfolio of Joel Armenta, a Full-Stack Web Designer specializing in Ruby, Tailwind, high-performance web design, and SEO.">
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://armentamj.de{{ LANGUAGE_CODE }}/">
+    <meta property="og:title" content="Joel Armenta | Full-Stack Web Designer">
+    <meta property="og:description"
+        content="High-performance web design and development specializing in Ruby, Django, and Tailwind CSS.">
+    <meta property="og:image" content="{% static 'images/share-image.jpg' %}">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://armentamj.de{{ LANGUAGE_CODE }}/">
+    <meta name="twitter:title" content="Joel Armenta | Full-Stack Web Designer">
+    <meta name="twitter:description"
+        content="High-performance web design and development specializing in Ruby, Django, and Tailwind CSS.">
+    <meta name="twitter:image" content="{% static 'images/share-image.jpg' %}">
+
     <title>{% trans "Joel M. A. Website Portfolio" %}</title>
+    <link rel="preload" as="image" href="{% static 'images/joel_garden.avif' %}" fetchpriority="high">
     <!-- Tailwind v4 -->
     {% tailwind_css %}
 

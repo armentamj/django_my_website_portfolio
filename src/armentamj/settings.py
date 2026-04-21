@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'homepage',
     'theme',
     'weather',
+    'svg',
 ]
 
 if DEBUG:
@@ -88,6 +89,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -164,6 +166,10 @@ STATIC_URL = 'static_prod/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
     BASE_DIR / "theme" / "static",
+]
+
+SVG_DIRS = [
+    os.path.join(BASE_DIR, 'static/images'),
 ]
 
 LOCALE_PATHS = [

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load svg %}
 {% load i18n %}
 
 {% block content %}
@@ -21,21 +22,23 @@
     <div class="w-full lg:w-7/10 lg:h-full">
         <h2 class="font-semibold w-fit text-md mx-auto mb-8">{% trans "Skills" %}</h2>
         <div class="grid grid-cols-4 gap-4 place-items-center">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/html.svg' %}" alt="{% trans 'HTML' %}" title="{% trans 'HTML' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/css.svg' %}" alt="{% trans 'CSS' %}" title="{% trans 'CSS' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/javascript.svg' %}" alt="{% trans 'JavaScript' %}" title="{% trans 'JavaScript' %}>
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/ruby.svg' %}" alt="{% trans 'Ruby' %}" title="{% trans 'Ruby' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/rails.svg' %}" alt="{% trans 'Rails' %}" title="{% trans 'Rails' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/sql.svg' %}" alt="{% trans 'SQL' %}" title="{% trans 'SQL' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/vue.svg' %}" alt="{% trans 'Vue' %}" title="{% trans 'Vue' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/vuemeta.svg' %}" alt="{% trans 'Vue Meta' %}" title="{% trans 'Vue Meta' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/pinia.svg' %}" alt="{% trans 'Pinia' %}" title="{% trans 'Pinia' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/tailwind.svg' %}" alt="{% trans 'Tailwind' %}" title="{% trans 'Tailwind' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/docker.svg' %}" alt="{% trans 'Docker' %}" title="{% trans 'Docker' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/figma.svg' %}" alt="{% trans 'Figma' %}" title="{% trans 'Figma' %}">
-            <img class="w-24 h-24 lg:w-12 lg:h-12 object-contain" src="{% static 'images/seo.svg' %}" alt="{% trans 'SEO' %}" title="{% trans 'SEO' %}">
+            <!-- The [&>svg]: classes force the inline SVG to fill the Tailwind container -->
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'HTML' %}" title="{% trans 'HTML' %}">{% svg 'html' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'CSS' %}" title="{% trans 'CSS' %}">{% svg 'css' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'JavaScript' %}" title="{% trans 'JavaScript' %}">{% svg 'javascript' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Ruby' %}" title="{% trans 'Ruby' %}">{% svg 'ruby' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Rails' %}" title="{% trans 'Rails' %}">{% svg 'rails' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'SQL' %}" title="{% trans 'SQL' %}">{% svg 'sql' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Vue' %}" title="{% trans 'Vue' %}">{% svg 'vue' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Vue Meta' %}" title="{% trans 'Vue Meta' %}">{% svg 'vuemeta' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Pinia' %}" title="{% trans 'Pinia' %}">{% svg 'pinia' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Tailwind' %}" title="{% trans 'Tailwind' %}">{% svg 'tailwind' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Docker' %}" title="{% trans 'Docker' %}">{% svg 'docker' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Figma' %}" title="{% trans 'Figma' %}">{% svg 'figma' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'SEO' %}" title="{% trans 'SEO' %}">{% svg 'seo' %}</div>
+            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="i18n" title="i18n">{% svg 'i18n' %}</div>
         </div>
     </div>
-    <img class="rounded-xs w-full lg:w-3/10 object-cover -scale-x-100" src="{% static 'images/joel_garden.jpg' %}" alt="{% trans 'Joel at Miami Beach botanical Garden' %}">
+    <img class="rounded-xs w-full lg:w-3/10 object-cover -scale-x-100" fetchpriority="high" loading="eager" src="{% static 'images/joel_garden.avif' %}" alt="{% trans 'Joel at Miami Beach botanical Garden' %}">
 </div>
 {% endblock %}
