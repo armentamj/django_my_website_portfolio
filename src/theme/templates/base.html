@@ -72,8 +72,6 @@
             <div class="lg:w-8 lg:h-8 w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-4xl lg:text-xs font-michroma">{{ user.username|slice:":1"|upper }}</div>
             <a href="{% url 'impressum' %}" class="lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Impressum" %}</a>
             <!-- Direct link to the Admin Login/Panel -->
-            <a href="/admin/" class="lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Admin" %}</a>
-        </div>
     </nav>
 
     <main class="lg:container mx-auto mt-8 p-0 bg-white shadow-xl border-t-2 border-gray-100 rounded">
