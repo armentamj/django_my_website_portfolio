@@ -4,7 +4,7 @@
 {% load i18n %}
 
 {% block content %}
-<div class="w-[90%] lg:w-4xl mx-auto my-10 lg:text-base text-3xl h-fit flex flex-col justify-center items-center pb-4">
+<div class="w-[90%] lg:w-4xl mx-auto lg:my-10 h-full lg:h-fit lg:text-base text-3xl flex flex-col justify-start items-center pb-4">
 
     <!-- Title -->
     <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-8 lg:mb-4">{% trans "Weather" %}</h1>
@@ -46,11 +46,15 @@
             </p>
             <p class="lg:text-base text-3xl">{% trans "Humidity:" %} {{ current.humidity }}%</p>
             <p class="lg:text-base text-3xl">
+                <!-- This line makes a veriable to avoid mutation of the original data and will be passed to call 
+                 an i18n Key (to_cardinal is a templatetag to turn the degrees into cardinal directions) -->
                 {% with direction=current.wind.deg|to_cardinal %}
+                <!-- This makes searches for the key called the same as the template variable direction -->
                 {% trans direction as translated_dir %}
-            
-                {# Use the 'units' variable to pick the right string #}
+
+                <!-- Use the 'units' variable to pick the right string ie it comes back in imperial and mph is selected else it is metric and kph is selected-->
                 {% if units == 'imperial' %}
+                <!-- This line makes a template variable called deg which is equal to   -->
                 {% blocktrans with deg=translated_dir speed=current.wind.speed|floatformat:0 %}
                 Wind: {{ deg }} / {{ speed }} MPH
                 {% endblocktrans %}
@@ -61,6 +65,7 @@
                 {% endif %}
                 {% endwith %}
             </p>
+            <!-- <p class="lg:text-base text-3xl"></p> -->
         </div>
     </div>
 
@@ -69,7 +74,7 @@
         <h2 class="font-bold mb-4 text-center font-michroma border-b border-black/30 pb-4 lg:pb-2">{% trans "5-Day Forecast" %}</h2>
         <div class="flex justify-center items-start gap-15">
             {% for day in forecast %}
-            <div class="flex flex-col items-center text-center gap-5 lg:gap-3">
+            <div class="flex flex-col justify-start items-center text-center gap-5 lg:gap-3 mx-3">
                 <!-- 
                   Instead of day.day, this uses the date filter with "l" (lowercase L).
                   This tells Django to look at the date object and output the full 

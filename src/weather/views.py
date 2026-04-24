@@ -1,3 +1,5 @@
+# --- DJANGO & THIRD-PARTY IMPORTS ---
+
 # Django shortcuts used to render HTML templates, redirect users to different pages, 
 # and return a 404 error if a specific database object is not found.
 from django.shortcuts import render, redirect, get_object_or_404
@@ -19,6 +21,8 @@ from datetime import datetime
 from django.utils import translation
 
 
+# --- WEATHER VIEW LOGIC ---
+
 def weather(request):
     # First, we check what language the site is currently in so we can tell the API
     # This ensures "clear sky" becomes "klarer Himmel" automatically
@@ -35,7 +39,7 @@ def weather(request):
     # Clean up any accidental spaces in the city name
     city = city.strip()
 
-    # Get the API key from our secret .env file
+    # Get the API key from our secret .env file using the OS library
     api_key = os.getenv('WEATHER_API_KEY')
     
     try:
@@ -45,7 +49,7 @@ def weather(request):
         geo_url = f"https://api.openweathermap.org/geo/1.0/direct?q={city}&limit=1&appid={api_key}"
         geo_res = requests.get(geo_url).json()
         
-        # If the API doesn't return anything, the city name is probably misspelled
+        # Validation: If the API doesn't return anything, the city name is probably misspelled
         if not geo_res:
             return render(request, 'weather/weather.html', {
                 'error': f'City "{city}" not found.', 
@@ -53,9 +57,10 @@ def weather(request):
             })
 
         # Since we found a real city, we save it in the session as the new 'last_city'
+        # This keeps the user on the same city if they refresh the page.
         request.session['last_city'] = city
 
-        # Extract the coordinates and the official name from the response
+        # Extract the coordinates and the official name from the response list
         lat = geo_res[0]['lat']
         lon = geo_res[0]['lon']
         display_name = geo_res[0]['name']
@@ -71,6 +76,7 @@ def weather(request):
         fore_url = f"https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={api_key}&units=metric&lang={current_lang}"
         fore_res = requests.get(fore_url).json()
 
+        # STEP 4: DATA PROCESSING
         # We need to group the 3-hour data points into actual daily blocks
         daily_data = {}
         if fore_res.get('cod') == "200":
@@ -94,24 +100,26 @@ def weather(request):
                 daily_data[date_str]['ids'].append(item['weather'][0]['id'])
                 daily_data[date_str]['descriptions'].append(item['weather'][0]['description'])
 
+        # STEP 5: FORECAST LIST GENERATION
         # Now we format that daily data into a list the template can easily loop through
         forecast_list = []
         today_str = datetime.now().strftime('%Y-%m-%d')
         
         for date, data in daily_data.items():
-            # We don't want to show 'today' in the forecast section
+            # Filter: We don't want to show 'today' in the forecast section
             if date == today_str: continue
             
             forecast_list.append({
                 'date_obj': data['date_obj'],
                 'min_temp': round(min(data['temps'])),
                 'max_temp': round(max(data['temps'])),
-                # We pick the weather ID from the middle of the day for the icon
+                # Logic: We pick the weather ID from the middle of the day for the icon
                 'id': data['ids'][len(data['ids'])//2],
                 'description': data['descriptions'][len(data['descriptions'])//2]
             })
 
-        # Finally, we package everything up into the context for the template
+        # STEP 6: TEMPLATE CONTEXT
+        # Finally, we package everything up into the context dictionary for the template
         context = {
             'city': display_name,
             'current': {
@@ -122,13 +130,16 @@ def weather(request):
                 'icon': curr_res['weather'][0]['icon'],
                 'humidity': curr_res['main']['humidity'],
                 'wind': curr_res['wind'],
+                
             },
-            'forecast': forecast_list[:5]
+            'forecast': forecast_list[:5] # Show only the next 5 days
         }
 
     except Exception as e:
-        # If the API is down or there is a network error, we catch it here
+        # Error handling: If the API is down or there is a network error, we catch it here
+        # so the entire application doesn't crash.
         print(f"PYTHON ERROR: {e}")
         context = {'error': 'Could not connect to the weather service.', 'city': city}
 
+    # Render the final page with our processed context
     return render(request, 'weather/weather.html', context)
