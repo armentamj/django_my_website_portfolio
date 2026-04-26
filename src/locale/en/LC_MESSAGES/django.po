@@ -1,0 +1,229 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-01 00:00+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+
+# src/locale/de/LC_MESSAGES/django.po
+
+msgid "Full Stack Web Developer"
+msgstr "Full Stack Web Developer"
+
+msgid "Skills"
+msgstr "Skills"
+
+msgid "Joel at Miami Beach botanical Garden"
+msgstr "Joel at Miami Beach botanical Garden"
+
+msgid ""
+"Hello, I'm a passionate Jr. Full Stack Web Developer with a "
+"particular love for the creativity of front-end development. Originally "
+"from L.A., CA, I was raised in Miami, FL, and have been calling Germany "
+"home since 2017. My coding journey began in early 2023, and I'm proud to "
+"have earned my Full Stack Web Developer certification from Le Wagon Berlin. "
+"Fast forward to today and I have expanded my stack to include a framework "
+"for front-end, SEO optimization, and speed optimization."
+msgstr ""
+"Hello, I'm a passionate Jr. Full Stack Web Developer with a "
+"particular love for the creativity of front-end development. Originally "
+"from L.A., CA, I was raised in Miami, FL, and have been calling Germany "
+"home since 2017. My coding journey began in early 2023, and I'm proud to "
+"have earned my Full Stack Web Developer certification from Le Wagon Berlin. "
+"Fast forward to today and I have expanded my stack to include a framework "
+"for front-end, SEO optimization, and speed optimization."
+
+msgid "HTML"
+msgstr "HTML"
+
+msgid "CSS"
+msgstr "CSS"
+
+msgid "JavaScript"
+msgstr "JavaScript"
+
+msgid "Ruby"
+msgstr "Ruby"
+
+msgid "Ruby on Rails"
+msgstr "Ruby on Rails"
+
+msgid "SQL"
+msgstr "SQL"
+
+msgid "Vue.js"
+msgstr "Vue.js"
+
+msgid "Docker"
+msgstr "Docker"
+
+msgid "Figma"
+msgstr "Figma"
+
+msgid "SEO"
+msgstr "SEO"
+
+msgid "Joel M. A. Website Portfolio"
+msgstr "Joel M. A. Website Portfolio"
+
+msgid "Home"
+msgstr "Home"
+
+msgid "Weather"
+msgstr "Wheather"
+
+msgid "Impressum"
+msgstr "Impressum"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Owner:"
+msgstr "Owner:"
+
+msgid "Address:"
+msgstr "Address:"
+
+msgid "email:"
+msgstr "email:"
+
+msgid "Disclaimer:"
+msgstr "Disclaimer:"
+
+msgid ""
+"This website is a personal portfolio created exclusively to showcase my "
+"professional skills and projects for employment opportunities. It does not "
+"constitute a commercial offer of services or a business activity. The "
+"contents of this site were prepared with great care. However, I cannot "
+"guarantee the accuracy or completeness of the information provided. As a "
+"service provider, I am responsible for my own content on these pages under "
+"general laws (§ 7 paragraph 1 DDG). This website contains links to my "
+"external profiles on GitHub and LinkedIn. While these links were checked for "
+"legal violations at the time of creation, I have no influence over the "
+"future design or content of these third-party sites and cannot assume "
+"liability for them."
+msgstr ""
+"This website is a personal portfolio created exclusively to showcase my "
+"professional skills and projects for employment opportunities. It does not "
+"constitute a commercial offer of services or a business activity. The "
+"contents of this site were prepared with great care. However, I cannot "
+"guarantee the accuracy or completeness of the information provided. As a "
+"service provider, I am responsible for my own content on these pages under "
+"general laws (§ 7 paragraph 1 DDG). This website contains links to my "
+"external profiles on GitHub and LinkedIn. While these links were checked for "
+"legal violations at the time of creation, I have no influence over the "
+"future design or content of these third-party sites and cannot assume "
+"liability for them."
+
+msgid "Joel Armenta's linked in profile"
+msgstr "Joel Armenta's linked in profile"
+
+msgid "github profile for armentamj"
+msgstr "GitHub profile for armentamj"
+
+msgid "Email me"
+msgstr "Email me"
+
+msgid "Weather icons provided by Erik Flowers."
+msgstr "Weather icons provided by Erik Flowers."
+
+msgid "City:"
+msgstr "City:"
+
+msgid "Search city..."
+msgstr "Search city..."
+
+msgid "Search"
+msgstr "Search"
+
+msgid "Current:"
+msgstr "Current:"
+
+msgid "Feels Like:"
+msgstr "Feels Like:"
+
+msgid "Humidity:"
+msgstr "Humidity:"
+
+msgid "Wind: %(deg)s° / %(speed)s KPH"
+msgstr "Wind: %(deg)s° / %(speed)s KPH"
+
+msgid "5-Day Forecast"
+msgstr "5-Day Forecast"
+
+msgid "N"
+msgstr "N"
+
+msgid "NNE"
+msgstr "NNE"
+
+msgid "NE"
+msgstr "NE"
+
+msgid "ENE"
+msgstr "ENE"
+
+msgid "E"
+msgstr "E"
+
+msgid "ESE"
+msgstr "ESE"
+
+msgid "SE"
+msgstr "SE"
+
+msgid "SSE"
+msgstr "SSE"
+
+msgid "S"
+msgstr "S"
+
+msgid "SSW"
+msgstr "SSW"
+
+msgid "SW"
+msgstr "SW"
+
+msgid "WSW"
+msgstr "WSW"
+
+msgid "W"
+msgstr "W"
+
+msgid "WNW"
+msgstr "WNW"
+
+msgid "NW"
+msgstr "NW"
+
+msgid "NNW"
+msgstr "NNW"
+
+msgid "Mon"
+msgstr "Mon"
+
+msgid "Tue"
+msgstr "Tue"
+
+msgid "Wed"
+msgstr "Wed"
+
+msgid "Thu"
+msgstr "Thu"
+
+msgid "Fri"
+msgstr "Fri"
+
+msgid "Sat"
+msgstr "Sat"
+
+msgid "Sun"
+msgstr "Sun"
