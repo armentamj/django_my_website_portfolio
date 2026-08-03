@@ -78,7 +78,7 @@ msgid "Home"
 msgstr "Home"
 
 msgid "Weather"
-msgstr "Wheather"
+msgstr "Weather"
 
 msgid "Impressum"
 msgstr "Impressum"
