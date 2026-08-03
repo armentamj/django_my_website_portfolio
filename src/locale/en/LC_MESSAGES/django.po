@@ -21,8 +21,8 @@ msgstr "Full Stack Web Developer"
 msgid "Skills"
 msgstr "Skills"
 
-msgid "Joel at Miami Beach botanical Garden"
-msgstr "Joel at Miami Beach botanical Garden"
+msgid "Joel image"
+msgstr "Joel taking a moment to take a photo."
 
 msgid ""
 "Hello, I'm a passionate Jr. Full Stack Web Developer with a "
