@@ -8,11 +8,9 @@
 
     <!-- Title -->
     <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-8 lg:mb-4">{% trans "Weather" %}</h1>
-
     <div class="flex justify-center items-center h-fit w-fit mb-4">
         <form class="flex justify-center items-center h-fit w-fit" method="GET" action="{% url 'weather' %}">
-            <div
-                class="h-fit w-fit flex justify-between items-center gap-0 rounded-lg border-2 border-black overflow-hidden">
+            <div class="h-fit w-fit flex justify-between items-center gap-0 rounded-lg border-2 border-black overflow-hidden">
                 <label class="px-2 font-michroma w-fit border-r border-black/20">{% trans "City:" %} </label>
                 <input class="px-2 outline-none" type="text" name="city" placeholder="{% trans 'Search city...' %}" value="{{ city }}">
             </div>

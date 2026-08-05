@@ -165,7 +165,11 @@ STATIC_ROOT = "static_prod"
 STATIC_URL = '/static_prod/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    # Looks for '/app/static' inside Docker
+    BASE_DIR / "static", 
+    # Looks for 'src/static' on your local development computer
+    BASE_DIR / "src" / "static", 
+    # Your Tailwind CSS configuration path
     BASE_DIR / "theme" / "static",
 ]
 
