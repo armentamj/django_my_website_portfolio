@@ -123,7 +123,7 @@ msgstr ""
 "future design or content of these third-party sites and cannot assume "
 "liability for them."
 
-msgid "Joel Armenta's linked in profile"
+msgid "Joel Armentas linked in profile"
 msgstr "Joel Armenta's linked in profile"
 
 msgid "github profile for armentamj"

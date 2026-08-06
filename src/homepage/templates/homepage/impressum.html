@@ -7,9 +7,9 @@
 
 {% block content %}
 
-<div class="w-[90%] lg:w-4xl mx-auto my-10 lg:text-base text-3xl pb-4 relative">
+<div class="w-[90%] lg:w-4xl mx-auto my-10 lg:text-base text-3xl pb-4 relative dark:bg-black dark:text-white">
     <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-6">{% trans "Impressum" %}</h1>
-    <div class="flex flex-col justify-start items-start gap-4">
+    <div class="flex flex-col justify-start items-start lg:gap-4 gap-8">
         <p><strong>{% trans "Owner:" %}</strong> Joel Mario Armenta</p>
         <p><strong>{% trans "Address:" %}</strong> Hansering 61, 23558 Lübeck Germany</p>
         <p><strong>{% trans "email:" %}</strong> armentamj@gmail.com</p>
@@ -31,12 +31,27 @@
         <p><strong>{% trans "Weather icons provided by Erik Flowers." %}</strong></p>
 
     </div>
-    <!-- Links and the bottom in the midle -->
+    <!-- Links at the bottom in the middle -->
     <div class="mt-20 flex gap-4 w-fit mx-auto">
-        <a href="http://www.linkedin.com/in/joel-armenta-821a80315" class="display-block w-24 h-24 lg:w-12 lg:h-12" target="_blank"><span class="w-full h-full [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Joel Armenta\'s linked in profile' %}" title="{% trans 'Joel Armenta\'s linked in profile' %}">{% svg 'linkedin' %}</span></a>
-        <a href="https://github.com/armentamj" class="display-block w-24 h-24 lg:w-12 lg:h-12" target="_blank"><span class="h-full w-full [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'github profile for armentamj' %}" title="{% trans 'github profile for armentamj' %}">{% svg 'github' %}</span></a>
-        <a href="mailto:armentamj+jobprospects@gmail.com" class="display-block w-24 h-24 lg:w-12 lg:h-12" target="_blank"><span class="w-full h-full [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Email me' %}" title="{% trans 'Email me' %}">{% svg 'email' %}</span></a>
-    </div>
+        <!-- LinkedIn -->
+        <a href="http://linkedin.com" target="_blank" class="block w-24 h-24 lg:w-12 lg:h-12 [&_svg]:w-full [&_svg]:h-full"
+            title="{% trans 'Joel Armentas linked in profile' %}">
+            {% svg 'linkedin' %}
+        </a>
+        
+        <!-- GitHub -->
+        <a href="https://github.com" target="_blank"
+            class="block w-24 h-24 lg:w-12 lg:h-12 [&_svg]:w-full [&_svg]:h-full dark:[&_svg_*]:stroke-white dark:[&_svg_*]:stroke-[0.5px]"
+            title="{% trans 'github profile for armentamj' %}">
+            {% svg 'github' %}
+        </a>
+        
+        <!-- Email -->
+        <a href="mailto:armentamj+jobprospects@gmail.com" target="_blank"
+            class="block w-24 h-24 lg:w-12 lg:h-12 [&_svg]:w-full [&_svg]:h-full dark:[&_svg_*]:stroke-white dark:[&_svg_*]:stroke-[0.5px]"
+            title="{% trans 'Email me' %}">
+            {% svg 'email' %}
+        </a>
 </div>
 
 

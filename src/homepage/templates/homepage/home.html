@@ -4,41 +4,41 @@
 {% load i18n %}
 
 {% block content %}
-<div class="w-[90%] lg:w-4xl mx-auto my-10 lg:text-base text-3xl h-fit pb-4">
+<div class="h-fit w-[90%] lg:w-8/10 mx-auto lg:text-base text-3xl pb-4 lg:h-[90%] pb-4 my-10 dark:bg-black dark:text-white">
     <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-0">Joel M. Armenta</h1>
-    <h2 class="font-semibold w-fit text-md mx-auto mb-8">{% trans "Full Stack Web Developer" %}</h2>
-    <div class="flex flex-col justify-start items-center gap-4">
-        <p class="w-full">
-            {% blocktrans trimmed %}
-            Hello, I'm a passionate Jr. Full Stack Web Developer with a particular love for the creativity of front-end
-            development. Originally from L.A., CA, I was raised in Miami, FL, and have been calling Germany home since 2017. My
-            coding journey began in early 2023, and I'm proud to have earned my Full Stack Web Developer certification from Le
-            Wagon Berlin. Fast forward to today and I have expanded my stack to include a framework for front-end, SEO optimization,
-            and speed optimization.
-            {% endblocktrans %}
-        </p>
-
-    <div class="flex flex-col justify-start items-center lg:flex-row lg:justify-between lg:items-start lg:gap-0 gap-4">
-    <div class="w-full lg:w-7/10 lg:h-full">
-        <h2 class="font-semibold w-fit text-md mx-auto mb-8">{% trans "Skills" %}</h2>
-        <div class="grid grid-cols-4 gap-4 place-items-center">
-            <!-- The [&>svg]: classes force the inline SVG to fill the Tailwind container -->
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'HTML' %}" title="{% trans 'HTML' %}">{% svg 'html' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'CSS' %}" title="{% trans 'CSS' %}">{% svg 'css' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'JavaScript' %}" title="{% trans 'JavaScript' %}">{% svg 'javascript' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Ruby' %}" title="{% trans 'Ruby' %}">{% svg 'ruby' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Rails' %}" title="{% trans 'Rails' %}">{% svg 'rails' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'SQL' %}" title="{% trans 'SQL' %}">{% svg 'sql' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Vue' %}" title="{% trans 'Vue' %}">{% svg 'vue' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Vue Meta' %}" title="{% trans 'Vue Meta' %}">{% svg 'vuemeta' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Pinia' %}" title="{% trans 'Pinia' %}">{% svg 'pinia' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Tailwind' %}" title="{% trans 'Tailwind' %}">{% svg 'tailwind' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Docker' %}" title="{% trans 'Docker' %}">{% svg 'docker' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Figma' %}" title="{% trans 'Figma' %}">{% svg 'figma' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'SEO' %}" title="{% trans 'SEO' %}">{% svg 'seo' %}</div>
-            <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="i18n" title="i18n">{% svg 'i18n' %}</div>
+    <h2 class="font-semibold w-fit text-md mx-auto mb-10">{% trans "Full Stack Web Developer" %}</h2>
+    <div class="w-full lg:h-full flex flex-col lg:flex-row lg:items-stretch lg:justify-between">
+        <div class="flex flex-col justify-between lg:mr-4 [&>*]:mx-auto lg:gap-0 gap-16">
+            <p class="w-full lg:mb-0 w-full">
+                {% blocktrans trimmed %}
+                Hello, I'm a passionate Jr. Full Stack Web Developer with a particular love for the creativity of front-end
+                development. Originally from L.A., CA, I was raised in Miami, FL, and have been calling Germany home since 2017. My
+                coding journey began in early 2023, and I'm proud to have earned my Full Stack Web Developer certification from Le
+                Wagon Berlin. Fast forward to today and I have expanded my stack to include a framework for front-end, SEO optimization,
+                and speed optimization.
+                {% endblocktrans %}
+            </p>
+            <div class="flex flex-col justify-start items-stretch w-full lg:gap-3 gap-10">
+                <h2 class="font-semibold mx-auto text-md lg:mb-0">{% trans "Skills" %}</h2>
+                <div class="grid grid-cols-4 place-items-center lg-w-full gap-3 lg:px-2 pb-2 w-full">
+                    <!-- The [&>svg]: classes force the inline SVG to fill the Tailwind container -->
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'HTML' %}" title="{% trans 'HTML' %}">{% svg 'html' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'CSS' %}" title="{% trans 'CSS' %}">{% svg 'css' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'JavaScript' %}" title="{% trans 'JavaScript' %}">{% svg 'javascript' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Ruby' %}" title="{% trans 'Ruby' %}">{% svg 'ruby' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Rails' %}" title="{% trans 'Rails' %}">{% svg 'rails' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'SQL' %}" title="{% trans 'SQL' %}">{% svg 'sql' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Vue' %}" title="{% trans 'Vue' %}">{% svg 'vue' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full dark:[&_text]:fill-white [&_text]:fill-0.3" alt="{% trans 'Vue Meta' %}" title="{% trans 'Vue Meta' %}">{% svg 'vuemeta' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Pinia' %}" title="{% trans 'Pinia' %}">{% svg 'pinia' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Tailwind' %}" title="{% trans 'Tailwind' %}">{% svg 'tailwind' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Docker' %}" title="{% trans 'Docker' %}">{% svg 'docker' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="{% trans 'Figma' %}" title="{% trans 'Figma' %}">{% svg 'figma' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full dark:[&_*]:stroke-white [&_*]:stroke-0.5" alt="{% trans 'SEO' %}" title="{% trans 'SEO' %}">{% svg 'seo' %}</div>
+                    <div class="w-24 h-24 lg:w-12 lg:h-12 [&>svg]:w-full [&>svg]:h-full" alt="i18n" title="i18n">{% svg 'i18n' %}</div>
+                </div>
+            </div>
         </div>
+        <img class="lg:mt-0 mt-10 rounded-md w-full lg:w-3/10 object-cover -scale-x-100 border" fetchpriority="high" loading="eager" src="{% static 'images/portfolio_profile.webp' %}" alt="{% trans 'Joel image' %}">
     </div>
-    <img class="rounded-xs w-full lg:w-3/10 object-cover -scale-x-100" fetchpriority="high" loading="eager" src="{% static 'images/portfolio_profile.webp' %}" alt="{% trans 'Joel image' %}">
-</div>
 {% endblock %}

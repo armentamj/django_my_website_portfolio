@@ -124,8 +124,8 @@ msgstr ""
 "habe ich keinen Einfluss auf die zukünftige Gestaltung oder die Inhalte "
 "dieser Drittanbieter-Seiten und kann für diese keine Haftung übernehmen."
 
-msgid "Joel Armenta's linked in profile"
-msgstr "Joel Armentas LinkedIn-Profil"
+msgid "Joel Armentas linked in profile"
+msgstr "Joel Armenta's LinkedIn-Profil"
 
 msgid "github profile for armentamj"
 msgstr "GitHub-Profil von armentamj"
