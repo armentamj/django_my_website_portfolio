@@ -136,6 +136,54 @@ msgstr "Schreib mir eine E-Mail"
 msgid "Weather icons provided by Erik Flowers."
 msgstr "Wetter-Icons bereitgestellt von Erik Flowers."
 
+msgid "datenschutzerklärung"
+msgstr "Datenschutzerklärung"
+
+msgid "General information and mandatory disclosures"
+msgstr "Allgemeine Hinweise und Pflichtinformationen"
+
+msgid "Data protection message"
+msgstr "Verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:"
+
+msgid "Data protection second message"
+msgstr "Die verantwortliche Stelle entscheidet allein oder gemeinsam mit anderen über die Zwecke und Mittel der Verarbeitung von personenbezogenen Daten."
+
+msgid "Server log files"
+msgstr "Server-Log-Dateien"
+
+msgid "The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These are:"
+msgstr "Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:"
+
+msgid "Browser type and browser version"
+msgstr "Browsertyp und Browserversion"
+
+msgid "Operating system used"
+msgstr "Verwendetes Betriebssystem"
+
+msgid "Referrer URL (the previously visited page)"
+msgstr "Referrer URL (die zuvor besuchte Seite)"
+
+msgid "Hostname of the accessing computer"
+msgstr "Hostname des zugreifenden Rechners"
+
+msgid "Time of the server request"
+msgstr "Uhrzeit der Serveranfrage"
+
+msgid "IP address"
+msgstr "IP-Adresse"
+
+msgid "This data will not be combined with other data sources."
+msgstr "Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen."
+
+msgid "Legal basis:"
+msgstr "Rechtsgrundlage:"
+
+msgid "Legal basis message"
+msgstr "" "Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. "
+          "Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien "
+          "Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Logfiles "
+          "erfasst werden. Die Daten werden nach spätestens 7 bis 14 Tagen automatisch gelöscht."
+
 msgid "City:"
 msgstr "Stadt:"
 

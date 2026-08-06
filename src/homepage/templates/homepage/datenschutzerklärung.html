@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block content %}
+<div class="w-[90%] lg:w-4xl mx-auto my-10 lg:text-base text-3xl pb-4 relative dark:bg-black dark:text-white">
+    <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-10"><strong>{% trans "General information and mandatory disclosures" %}</strong></h1>
+    <h2 class="font-semibold w-fit text-md mx-auto mb-2">{% trans "Data protection message" %}</h2>
+    <p><strong>{% trans "Owner:" %}</strong> Joel Mario Armenta</p>
+    <p><strong>{% trans "Address:" %}</strong> Hansering 61, 23558 Lübeck Germany</p>
+    <p class="mb-10"><strong>{% trans "email:" %}</strong> armentamj@gmail.com</p>
+    <h2 class="font-semibold w-fit text-md mx-auto mb-2"><strong>{% trans "Server log files" %}</strong></h2>
+    <p><strong>{% trans "The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These are:" %}</strong></p>
+    <ul class="list-disc list-inside mt-2 mb-10">
+        <li>{% trans "Browser type and browser version" %}</li>
+        <li>{% trans "Operating system used" %}</li>
+        <li>{% trans "Referrer URL (the previously visited page)" %}</li>
+        <li>{% trans "Hostname of the accessing computer" %}</li>
+        <li>{% trans "Time of the server request" %}</li>
+        <li>{% trans "IP address" %}</li>
+    </ul>
+    <h2 class="font-semibold w-fit text-md mx-auto mb-2 my-4">{% trans "This data will not be combined with other data sources." %}</h2>
+    <p><strong>{% trans "Legal basis:" %}</strong> {% trans "Legal basis message" %}</p>
+</div>
+
+{% endblock %}

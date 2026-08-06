@@ -135,6 +135,51 @@ msgstr "Email me"
 msgid "Weather icons provided by Erik Flowers."
 msgstr "Weather icons provided by Erik Flowers."
 
+msgid "datenschutzerklärung"
+msgstr "Privacy Policy"
+
+msgid "General information and mandatory disclosures"
+msgstr "General information and mandatory disclosures"
+
+msgid "Data protection message"
+msgstr "The party responsible for data processing on this website is:"
+
+msgid "Data protection second message"
+msgstr "The responsible party decides alone or jointly with others on the purposes and means of processing personal data (e.g., names, contact details, or similar)."
+
+msgid "Server log files"
+msgstr "Server Log Files"
+
+msgid "Browser type and browser version"
+msgstr "Browser type and browser version"
+
+msgid "Operating system used"
+msgstr "Operating system used"
+
+msgid "Referrer URL (the previously visited page)"
+msgstr "Referrer URL (the previously visited page)"
+
+msgid "Hostname of the accessing computer"
+msgstr "Hostname of the accessing computer"
+
+msgid "Time of the server request"
+msgstr "Time of the server request"
+
+msgid "IP address"
+msgstr "IP address"
+
+msgid "This data will not be combined with other data sources."
+msgstr "This data will not be combined with other data sources."
+
+msgid "Legal basis:"
+msgstr "Legal basis:"
+
+msgid "Legal basis message"
+msgstr "" "The collection of this data is based on Art. 6 para. 1 lit. f GDPR. The website "
+        "operator has a legitimate interest in the technically error-free presentation and "
+        "optimization of its website – the server log files must be recorded for this "
+        "purpose. The data will be automatically deleted after 7 to 14 days at the latest."
+
 msgid "City:"
 msgstr "City:"
 

@@ -10,3 +10,7 @@ def home(request):
 def impressum(request):
     # It serves the 'impressum.html' file when the user visits /impressum/
     return render(request, 'homepage/impressum.html')
+
+def datenschutzerklärung(request):
+    # It serves the 'impressum.html' file when the user visits /datenschutzerklärung/
+     return render(request, 'homepage/datenschutzerklärung.html')

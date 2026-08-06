@@ -71,6 +71,7 @@
         <div class="secondmen hidden lg:flex w-full lg:w-fit flex-col lg:flex-row justify-start lg:justify-between items-center h-fit gap-5">
             <div class="hidden lg:w-8 lg:h-8 w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-4xl lg:text-xs font-michroma">{{ user.username|slice:":1"|upper }}</div>
             <a href="{% url 'impressum' %}" class="dark:hover:bg-white dark:hover:text-black lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Impressum" %}</a>
+            <a href="{% url 'datenschutzerklärung' %}" class="dark:hover:bg-white dark:hover:text-black lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "datenschutzerklärung" %}</a>
             <!-- Direct link to the Admin Login/Panel -->
     </nav>
 
