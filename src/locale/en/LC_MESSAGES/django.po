@@ -93,7 +93,7 @@ msgid "Address:"
 msgstr "Address:"
 
 msgid "email:"
-msgstr "email:"
+msgstr "E-mail:"
 
 msgid "Disclaimer:"
 msgstr "Disclaimer:"
@@ -179,6 +179,36 @@ msgstr "" "The collection of this data is based on Art. 6 para. 1 lit. f GDPR. T
         "operator has a legitimate interest in the technically error-free presentation and "
         "optimization of its website – the server log files must be recorded for this "
         "purpose. The data will be automatically deleted after 7 to 14 days at the latest."
+
+msgid "Integration of the OpenWeather Service"
+msgstr "Integration of the OpenWeather Service"
+
+msgid "Type and Scope of Data Processing:"
+msgstr "Type and Scope of Data Processing:"
+
+msgid "We integrate weather data on our website via an application programming interface (API) provided by the service OpenWeather. This service is operated by OpenWeather Ltd. (Avenue Mansions, 49-51 Shirley Road, Southampton, SO15 3RL, United Kingdom)."
+msgstr "We integrate weather data on our website via an application programming interface (API) provided by the service <strong>OpenWeather</strong>. This service is operated by <strong>OpenWeather Ltd.</strong> (Avenue Mansions, 49-51 Shirley Road, Southampton, SO15 3RL, United Kingdom)."
+
+msgid "When you access the subpage containing the weather element, your browser establishes a direct connection to OpenWeather's servers. During this process, technically necessary data is transmitted to retrieve and display the weather data. This data includes your IP address, the date and time of access, and technical information about your browser."
+msgstr "When you access the subpage containing the weather element, your browser establishes a direct connection to <strong>OpenWeather's servers</strong>. During this process, technically necessary data is transmitted to retrieve and display the weather data. This data includes your <strong>IP address</strong>, the date and time of access, and technical information about your browser."
+
+msgid "Legal Basis:"
+msgstr "<strong>Legal Basis:</strong>"
+
+msgid "The integration is based on Art. 6 Para. 1 lit. f GDPR (Legitimate Interest). Our legitimate interest lies in providing up-to-date, regional weather information to optimize the service and overall user experience on our website."
+msgstr "The integration is based on <strong>Art. 6 Para. 1 lit. f GDPR (Legitimate Interest)</strong>. Our legitimate interest lies in providing up-to-date, regional weather information to optimize the service and overall user experience on our website."
+
+msgid "Third-Country Data Transfer:"
+msgstr "<strong>Third-Country Data Transfer:</strong>"
+
+msgid "Since OpenWeather Ltd. is based in the United Kingdom (UK), data is transferred to a so-called third country. An adequacy decision by the EU Commission is in place for the United Kingdom. This certifies that the UK provides a level of data protection equivalent to that of the European Union."
+msgstr "Since <strong>OpenWeather Ltd.</strong> is based in the United Kingdom (UK), data is transferred to a so-called <strong>third country</strong>. An <strong>adequacy decision</strong> by the EU Commission is in place for the United Kingdom. This certifies that the UK provides a level of data protection equivalent to that of the European Union."
+
+msgid "Storage Period & Objection:"
+msgstr "<strong>Storage Period & Objection:</strong>"
+
+msgid "We do not store any personal data ourselves through the use of this service. Further information on data processing and storage periods by OpenWeather can be found directly in the OpenWeather Privacy Policy."
+msgstr "We do not store any personal data ourselves through the use of this service. Further information on data processing and storage periods by OpenWeather can be found directly in the <strong>OpenWeather Privacy Policy</strong>."
 
 msgid "City:"
 msgstr "City:"

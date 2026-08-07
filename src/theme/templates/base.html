@@ -48,8 +48,8 @@
             </div>
         </button>
         <div class="firstmen hidden lg:flex w-full lg:w-fit flex-col lg:flex-row justify-start lg:justify-between items-center h-fit gap-5">
-            <a href="{% url 'home' %}" class="dark:hover:bg-white dark:hover:text-black lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Home" %}</a>
-            <a class="dark:hover:bg-white dark:hover:text-black lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" href="{% url 'weather' %}">{% trans "Weather" %}</a>
+            <a href="{% url 'home' %}" class="dark:bg-black bg-white dark:hover:bg-white dark:hover:text-black cursor-pointer lg:text-base text-4xl mx-4 hover:shadow-[inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09)] transition-all duration-150 ease-in px-2 py-0.5 rounded-sm">{% trans "Home" %}</a>
+            <a class="dark:bg-black bg-white dark:hover:bg-white dark:hover:text-black cursor-pointer lg:text-base text-4xl mx-4 hover:shadow-[inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09)] transition-all duration-150 ease-in px-2 py-0.5 rounded-sm" href="{% url 'weather' %}">{% trans "Weather" %}</a>
             <!-- The action must point to the 'set_language' view provided by the i18n include -->
             <div class="w-fit h-fit">
                 <form action="{% url 'set_language' %}" method="post">
@@ -59,19 +59,19 @@
                     {% if '/en/' in request.path or request.path == '/en' %}
                     <!-- If it is in English, switch to German (remove /en) -->
                     <input name="next" type="hidden" value="{{ request.path|slice:'3:' }}">
-                    <button class="dark:hover:bg-white dark:hover:text-black cursor-pointer lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="de">Deutsch</button>
+                    <button class="dark:bg-black bg-white dark:hover:bg-white dark:hover:text-black cursor-pointer lg:text-base text-4xl mx-4 hover:shadow-[inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09)] transition-all duration-150 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="de">Deutsch</button>
                     {% else %}
                     <!-- We are in German, switch to English (add /en) -->
                     <input name="next" type="hidden" value="/en{{ request.path }}">
-                    <button class="dark:hover:bg-white dark:hover:text-black cursor-pointer lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="en">English</button>
+                    <button class="dark:bg-black bg-white dark:hover:bg-white dark:hover:text-black cursor-pointer lg:text-base text-4xl mx-4 hover:shadow-[inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09)] transition-all duration-150 ease-in px-2 py-0.5 rounded-sm" type="submit" name="language" value="en">English</button>
                     {% endif %}
                 </form>
             </div>
         </div>
         <div class="secondmen hidden lg:flex w-full lg:w-fit flex-col lg:flex-row justify-start lg:justify-between items-center h-fit gap-5">
             <div class="hidden lg:w-8 lg:h-8 w-20 h-20 rounded-full bg-gray-200 flex items-center justify-center text-4xl lg:text-xs font-michroma">{{ user.username|slice:":1"|upper }}</div>
-            <a href="{% url 'impressum' %}" class="dark:hover:bg-white dark:hover:text-black lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "Impressum" %}</a>
-            <a href="{% url 'datenschutzerklärung' %}" class="dark:hover:bg-white dark:hover:text-black lg:text-base text-4xl mx-4 hover:bg-black hover:text-white duration-300 ease-in px-2 py-0.5 rounded-sm">{% trans "datenschutzerklärung" %}</a>
+            <a href="{% url 'impressum' %}" class="dark:bg-black bg-white dark:hover:bg-white dark:hover:text-black cursor-pointer lg:text-base text-4xl mx-4 hover:shadow-[inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09)] transition-all duration-150 ease-in px-2 py-0.5 rounded-sm">{% trans "Impressum" %}</a>
+            <a href="{% url 'datenschutzerklärung' %}" class="dark:bg-black bg-white dark:hover:bg-white dark:hover:text-black cursor-pointer lg:text-base text-4xl mx-4 hover:shadow-[inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09)] transition-all duration-150 ease-in px-2 py-0.5 rounded-sm">{% trans "datenschutzerklärung" %}</a>
             <!-- Direct link to the Admin Login/Panel -->
     </nav>
 

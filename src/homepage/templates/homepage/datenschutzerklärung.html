@@ -2,12 +2,9 @@
 {% load i18n %}
 
 {% block content %}
-<div class="w-[90%] lg:w-4xl mx-auto my-10 lg:text-base text-3xl pb-4 relative dark:bg-black dark:text-white">
+<div class="w-[90%] lg:w-8/10 mx-auto my-10 lg:text-base text-3xl pb-4 relative dark:bg-black dark:text-white">
     <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-10"><strong>{% trans "General information and mandatory disclosures" %}</strong></h1>
-    <h2 class="font-semibold w-fit text-md mx-auto mb-2">{% trans "Data protection message" %}</h2>
-    <p><strong>{% trans "Owner:" %}</strong> Joel Mario Armenta</p>
-    <p><strong>{% trans "Address:" %}</strong> Hansering 61, 23558 Lübeck Germany</p>
-    <p class="mb-10"><strong>{% trans "email:" %}</strong> armentamj@gmail.com</p>
+
     <h2 class="font-semibold w-fit text-md mx-auto mb-2"><strong>{% trans "Server log files" %}</strong></h2>
     <p><strong>{% trans "The provider of the pages automatically collects and stores information in so-called server log files, which your browser automatically transmits to us. These are:" %}</strong></p>
     <ul class="list-disc list-inside mt-2 mb-10">
@@ -19,7 +16,21 @@
         <li>{% trans "IP address" %}</li>
     </ul>
     <h2 class="font-semibold w-fit text-md mx-auto mb-2 my-4">{% trans "This data will not be combined with other data sources." %}</h2>
-    <p><strong>{% trans "Legal basis:" %}</strong> {% trans "Legal basis message" %}</p>
+    <p class="border-b border-black dark:border-white mb-10 pb-10"><strong>{% trans "Legal basis:" %}</strong> {% trans "Legal basis message" %}</p>
+
+    <h2 class="font-semibold w-fit text-md mx-auto mt-10 mb-2">{% trans "Integration of the OpenWeather Service" %}</h2>
+    <p><strong>{% trans "Type and Scope of Data Processing:" %}</strong></p>
+    <p>{% trans "We integrate weather data on our website via an application programming interface (API) provided by the service OpenWeather. This service is operated by OpenWeather Ltd. (Avenue Mansions, 49-51 Shirley Road, Southampton, SO15 3RL, United Kingdom)." %}</p>
+    <p>{% trans "When you access the subpage containing the weather element, your browser establishes a direct connection to OpenWeather's servers. During this process, technically necessary data is transmitted to retrieve and display the weather data. This data includes your IP address, the date and time of access, and technical information about your browser." %}</p>
+    
+    <p class="mt-4"><strong>{% trans "Legal Basis:" %}</strong></p>
+    <p>{% trans "The integration is based on Art. 6 Para. 1 lit. f GDPR (Legitimate Interest). Our legitimate interest lies in providing up-to-date, regional weather information to optimize the service and overall user experience on our website." %}</p>
+    
+    <p class="mt-4"><strong>{% trans "Third-Country Data Transfer:" %}</strong></p>
+    <p>{% trans "Since OpenWeather Ltd. is based in the United Kingdom (UK), data is transferred to a so-called third country. An adequacy decision by the EU Commission is in place for the United Kingdom. This certifies that the UK provides a level of data protection equivalent to that of the European Union." %}</p>
+    
+    <p class="mt-4"><strong>{% trans "Storage Period & Objection:" %}</strong></p>
+    <p class="pb-2">{% trans "We do not store any personal data ourselves through the use of this service. Further information on data processing and storage periods by OpenWeather can be found directly in the OpenWeather Privacy Policy." %}</p>
 </div>
 
 {% endblock %}

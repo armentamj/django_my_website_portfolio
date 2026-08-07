@@ -4,7 +4,7 @@
 {% load i18n %}
 
 {% block content %}
-<div class="w-[90%] lg:w-4xl mx-auto lg:my-10 h-full lg:h-fit lg:text-base text-3xl flex flex-col justify-start items-center pb-4 dark:bg-black dark:text-white">
+<div class="w-[90%] lg:w-8/10 mx-auto lg:my-10 lg:min-h-[calc(77vh-2.5rem)] lg:text-base text-3xl flex flex-col justify-start items-center dark:bg-black dark:text-white">
 
     <!-- Title -->
     <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-8 lg:mb-4">{% trans "Weather" %}</h1>
@@ -15,7 +15,7 @@
                 <input class="px-2 outline-none" type="text" name="city" placeholder="{% trans 'Search city...' %}" value="{{ city }}">
             </div>
             <div class="ml-4 h-fit w-fit flex justify-center items-center">
-                <button class="cursor-pointer border-box w-full dark:hover:bg-white dark:hover:text-black hover:bg-black/30 hover:text-black text-white bg-black dark:border dark:border-white duration-300 ease-in px-4 py-0.5 rounded-md font-michroma"
+                <button class="cursor-pointer border-box w-full dark:hover:bg-white dark:hover:text-black hover:bg-black/30 hover:text-black text-white bg-black dark:border dark:border-white duration-150 ease-in px-4 py-0.5 rounded-md font-michroma"
                     type="submit">
                     {% trans "Search" %}
                 </button>
@@ -31,7 +31,7 @@
 
     {% if current %}
     <!-- Current Weather Section -->
-    <div class="flex flex-col items-center mb-16 lg:mb-8">
+    <div class="flex flex-col items-center mb-16 lg:mb-4">
         <h2 class="mt-8 lg:mt-0 lg:text-base text-5xl font-bold font-michroma">{{ current.curr_res.name }}, {{ current.curr_res.sys.country }}</h2>
         <i class="wi wi-owm-{{ current.id }} text-[240px] lg:text-[160px] text-blue-400 my-12 lg:my-4"></i>
         <div class="text-center space-y-3 lg:space-y-1">
@@ -67,11 +67,11 @@
     </div>
 
     <!-- 5-Day Forecast Section -->
-    <div class="w-full mt-8">
+    <div class="w-full mt-4">
         <h2 class="font-bold mb-4 text-center font-michroma dark:border-white border-b border-black/30 pb-4 lg:pb-2">{% trans "5-Day Forecast" %}</h2>
         <div class="flex justify-center items-start gap-15">
             {% for day in forecast %}
-            <div class="flex flex-col justify-start items-center text-center gap-5 lg:gap-3 mx-3">
+            <div class="flex flex-col justify-start items-center text-center gap-5 lg:gap-3 mx-3 min-w-20 lg:min-w-15">
                 <!-- 
                   Instead of day.day, this uses the date filter with "l" (lowercase L).
                   This tells Django to look at the date object and output the full 

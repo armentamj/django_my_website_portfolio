@@ -184,6 +184,36 @@ msgstr "" "Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 li
           "Darstellung und der Optimierung seiner Website – hierzu müssen die Server-Logfiles "
           "erfasst werden. Die Daten werden nach spätestens 7 bis 14 Tagen automatisch gelöscht."
 
+msgid "Integration of the OpenWeather Service"
+msgstr "Einbindung des OpenWeather-Dienstes"
+
+msgid "Type and Scope of Data Processing:"
+msgstr "Art und Umfang der Datenverarbeitung:"
+
+msgid "We integrate weather data on our website via an application programming interface (API) provided by the service OpenWeather. This service is operated by OpenWeather Ltd. (Avenue Mansions, 49-51 Shirley Road, Southampton, SO15 3RL, United Kingdom)."
+msgstr "Wir binden auf unserer Website Wetterdaten über eine Programmierschnittstelle (API) des Dienstes <strong>OpenWeather</strong> ein. Dieser Dienst wird von der <strong>OpenWeather Ltd.</strong> (Avenue Mansions, 49-51 Shirley Road, Southampton, SO15 3RL, United Kingdom) bereitgestellt."
+
+msgid "When you access the subpage containing the weather element, your browser establishes a direct connection to OpenWeather's servers. During this process, technically necessary data is transmitted to retrieve and display the weather data. This data includes your IP address, the date and time of access, and technical information about your browser."
+msgstr "Wenn Sie die Unterseite mit dem Wetter-Element aufrufen, stellt Ihr Browser eine direkte Verbindung zu den <strong>Servern von OpenWeather</strong> her. Dabei werden technisch notwendige Daten übertragen, um die Wetterdaten abzurufen und anzuzeigen. Zu diesen Daten gehören Ihre <strong>IP-Adresse</strong>, Datum und Uhrzeit des Zugriffs sowie technische Informationen zu Ihrem Browser."
+
+msgid "Legal Basis:"
+msgstr "<strong>Rechtsgrundlage:</strong>"
+
+msgid "The integration is based on Art. 6 Para. 1 lit. f GDPR (Legitimate Interest). Our legitimate interest lies in providing up-to-date, regional weather information to optimize the service and overall user experience on our website."
+msgstr "Die Einbindung erfolgt auf Grundlage von <strong>Art. 6 Abs. 1 lit. f DSGVO (Berechtigtes Interesse)</strong>. Unser berechtigtes Interesse liegt in der Bereitstellung von aktuellen, regionalen Wetterinformationen, um den Service und die Nutzererfahrung auf unserer Website zu optimieren."
+
+msgid "Third-Country Data Transfer:"
+msgstr "<strong>Drittlandtransfer:</strong>"
+
+msgid "Since OpenWeather Ltd. is based in the United Kingdom (UK), data is transferred to a so-called third country. An adequacy decision by the EU Commission is in place for the United Kingdom. This certifies that the UK provides a level of data protection equivalent to that of the European Union."
+msgstr "Da <strong>OpenWeather Ltd.</strong> ihren Sitz im Vereinigten Königreich (UK) hat, erfolgt eine Datenübermittlung in ein sogenanntes <strong>Drittland</strong>. Für das Vereinigte Königreich liegt ein <strong>Angemessenheitsbeschluss</strong> der EU-Kommission vor. Dieser bescheinigt dem UK ein Datenschutzniveau, das dem der EU entspricht."
+
+msgid "Storage Period & Objection:"
+msgstr "<strong>Speicherdauer & Widerspruch:</strong>"
+
+msgid "We do not store any personal data ourselves through the use of this service. Further information on data processing and storage periods by OpenWeather can be found directly in the OpenWeather Privacy Policy."
+msgstr "Wir selbst speichern keine Daten durch die Nutzung dieses Dienstes. Weitere Informationen zur Datenverarbeitung und Speicherdauer durch OpenWeather finden Sie in der <strong>Datenschutzerklärung von OpenWeather</strong>."
+
 msgid "City:"
 msgstr "Stadt:"
 
