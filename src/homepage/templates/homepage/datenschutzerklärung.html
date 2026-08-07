@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-<div class="w-[90%] lg:w-8/10 mx-auto my-10 lg:text-base text-3xl pb-4 relative dark:bg-black dark:text-white">
+<div class="w-[90%] lg:w-8/10 mx-auto my-10 lg:text-base text-3xl relative dark:bg-black dark:text-white h-fit">
     <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-10"><strong>{% trans "General information and mandatory disclosures" %}</strong></h1>
 
     <h2 class="font-semibold w-fit text-md mx-auto mb-2"><strong>{% trans "Server log files" %}</strong></h2>
@@ -32,5 +32,4 @@
     <p class="mt-4"><strong>{% trans "Storage Period & Objection:" %}</strong></p>
     <p class="pb-2">{% trans "We do not store any personal data ourselves through the use of this service. Further information on data processing and storage periods by OpenWeather can be found directly in the OpenWeather Privacy Policy." %}</p>
 </div>
-
 {% endblock %}
