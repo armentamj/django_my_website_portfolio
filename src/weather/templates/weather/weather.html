@@ -36,7 +36,7 @@
         <i class="wi wi-owm-{{ current.id }} text-[240px] lg:text-[160px] text-blue-400 my-12 lg:my-4"></i>
         <div class="text-center space-y-3 lg:space-y-1">
             <p class="{% if 'en' in request.path %}capitalize{% endif %} lg:text-base text-3xl">{{ current.description }}</p>
-            <p class="lg:text-base text-3xl">{% trans "Current:" %} {{ current.temp }}{% if units == 'imperial' %}°F{% else %}°C{% endif %}
+            <p class="lg:text-base text-3xl">{% trans "Current:" %} {{ current.temp }} {% if units == 'imperial' %}°F{% else %}°C{% endif %}
             </p>
             <p class="lg:text-base text-3xl">
                 {% trans "Feels Like:" %} {{ current.curr_res.main.feels_like|floatformat:0 }} {% if units == 'imperial' %}°F{% else %}°C{% endif %}
