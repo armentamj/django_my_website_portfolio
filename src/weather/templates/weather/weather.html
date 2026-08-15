@@ -4,18 +4,18 @@
 {% load i18n %}
 
 {% block content %}
-<div class="w-[90%] lg:w-8/10 mx-auto my-10 lg:min-h-[calc(77vh-2.5rem)] lg:text-base text-3xl flex flex-col justify-start items-center dark:bg-black dark:text-white">
+<div class="w-[88%] lg:w-8/10 mx-auto my-10 lg:min-h-[calc(77vh-2.5rem)] lg:text-base text-3xl flex flex-col justify-start items-center dark:bg-black dark:text-white">
 
     <!-- Title -->
     <h1 class="lg:text-2xl text-6xl font-bold w-fit mx-auto mb-8 lg:mb-4">{% trans "Weather" %}</h1>
     <div class="flex justify-center items-center h-fit w-fit mb-4">
         <form class="flex justify-center items-center h-fit w-fit" method="GET" action="{% url 'weather' %}">
-            <div class="h-fit w-fit flex justify-between items-center gap-0 rounded-sm dark:border-white border-2 border-black overflow-hidden">
+            <div class="h-fit lg:w-fit w-150 flex justify-between items-center gap-0 rounded-sm dark:border-white border-2 border-black overflow-hidden">
                 <label class="px-2 font-michroma w-fit border-r border-black/20 dark:border-white">{% trans "City:" %} </label>
                 <input class="px-2 outline-none" type="text" name="city" placeholder="{% trans 'Search city...' %}" value="{{ city }}">
             </div>
             <div class="ml-4 h-fit w-fit flex justify-center items-center">
-                <button class="box-borderhover:shadow-[inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09)] dark:bg-black bg-white dark:border-black dark:border hover:dark:shadow-[inset_0_4px_10px_-2px_white] hover:dark:border hover:dark:border-white dark:bg-black transition-all cursor-pointer lg:text-base text-4xl mx-4 hover:shadow-[inset_0px_0px_8px_rgba(0,0,0,0.09),inset_0px_0px_8px_rgba(0,0,0,0.09),inset_0px_0px_8px_rgba(0,0,0,0.09),inset_0px_0px_8px_rgba(0,0,0,0.09)] border border-black border-2 dark:border-white transition-all duration-150 ease-in px-4 py-0 rounded-sm font-michroma"
+                <button class="box-border hover:shadow-[inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09),inset_0px_0px_5px_rgba(0,0,0,0.09)] dark:bg-black bg-white dark:border-black dark:border hover:dark:shadow-[inset_0_4px_10px_-2px_white] hover:dark:border hover:dark:border-white dark:bg-black transition-all cursor-pointer lg:text-base mx-4 hover:shadow-[inset_0px_0px_8px_rgba(0,0,0,0.09),inset_0px_0px_8px_rgba(0,0,0,0.09),inset_0px_0px_8px_rgba(0,0,0,0.09),inset_0px_0px_8px_rgba(0,0,0,0.09)] border border-black border-2 dark:border-white transition-all duration-150 ease-in lg:px-4 px-2 py-0 rounded-sm font-michroma"
                     type="submit">
                     {% trans "Search" %}
                 </button>
@@ -86,7 +86,5 @@
         </div>
     </div>
     {% endif %}
-    <!-- This is for seeing the response on the console -->
-    <script>console.log("Here is the Local Weather api response: ", {{ current.curr_res | safe }})</script>
 </div>
 {% endblock %}
